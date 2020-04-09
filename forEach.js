@@ -10,7 +10,7 @@ doubleVals = (arr) => {
   arr.forEach(num => {
     newArr.push(num *2)
   })
-  reutn newArr
+  return newArr;
 }
 
 //return evens
@@ -24,12 +24,11 @@ onlyEvans = (arr) => {
   return newArr
 }
 
-//first and last
-showFirstandLast = (arr) => {
-  let newArr = [];
-  arr.forEach(num => {
-    newArr.push(num[0] + num[num.length-1])
-  })
-  return newArr
+//first and last char of each string in array
+showFirstAndLast = (arr) => {
+  var newArr = [];
+  arr.forEach(str => {
+      newArr.push(str[0] + str[str.length-1])
+  });
+  return newArr;
 }
-
