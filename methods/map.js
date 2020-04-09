@@ -5,14 +5,14 @@
 //returns the new array — which is always of the same length as the original
 
 function doubleValues(arr){
-  return arr.map(function(val){
-      return val * 2
+  return arr.map(function(item){
+      return item * 2
   });
 }
 
 function valTimesIndex(arr){
-  return arr.map(function(val,idx){
-      return val*idx;
+  return arr.map(function(item,idx){
+      return item*idx;
   })
 }
 
@@ -20,7 +20,13 @@ function valTimesIndex(arr){
 */
 
 function extractValue(arr,key){
-  return arr.map(function(val){
-      return val[key];
+  return arr.map(function(item){
+      return item[key];
+  });
+}
+
+function extractFullName(arr){
+  return arr.map(function(item){
+    return item.first + " " + item.last;
   });
 }
