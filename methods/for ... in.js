@@ -28,3 +28,26 @@ for (let k in obj) {
       return true;
   }
 }
+
+
+//if key val is greater than or equal to two, push to new array
+const obj = {
+  odd: 1,
+  even: 2,
+  found: 5,
+  random: 18
+};
+objArray = []
+// for (let key in obj) {
+//  if (obj[key] > 1) { 
+//    objArray.push(obj[key]);
+//  }
+// }
+
+// for (let key in obj) {
+//   obj[key] > 1 ? objArray.push(obj[key]) : false
+// }
+
+for (let key in obj) {
+  if (obj[key] > 1) objArray.push(obj[key]) 
+}
