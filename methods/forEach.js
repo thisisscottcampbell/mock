@@ -32,3 +32,9 @@ showFirstAndLast = (arr) => {
   });
   return newArr;
 }
+
+//times a number by ten if the number in the array is greater than 4
+
+array.forEach((num, i, arr) => {
+ return arr[i] = num < 5 ? num : num = num * 10
+})
