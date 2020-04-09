@@ -38,6 +38,11 @@ const obj = {
   random: 18
 };
 objArray = []
+
+for (let key in obj) {
+  if (obj[key] > 1) objArray.push(obj[key]) 
+}
+//LONGER CODE SOLOOYSH EXAMPLES
 // for (let key in obj) {
 //  if (obj[key] > 1) { 
 //    objArray.push(obj[key]);
@@ -47,7 +52,3 @@ objArray = []
 // for (let key in obj) {
 //   obj[key] > 1 ? objArray.push(obj[key]) : false
 // }
-
-for (let key in obj) {
-  if (obj[key] > 1) objArray.push(obj[key]) 
-}
