@@ -1,5 +1,6 @@
 //Definition
-  //The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present
+  //The indexOf() method returns the first index at which a given element can be found in the array. 
+    // **Will return -1 if it is not present
 
 const cats = ['Garfield', 'Felix', 'Tigger', 'Sylvester', 'Felix'];
 

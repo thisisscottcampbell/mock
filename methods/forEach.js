@@ -1,9 +1,11 @@
-// DOES NOT RETURN necessarily
-// WILL MUTATE ON OG ARRAY IF FUNCTIONALITY IS RETURNED
-// iterates through an array
-// runs callback on each value in the array
-// three possible: (item, index, array)
-// returns undefined
+//DEFINITION
+  // iterates through an array
+  // runs callback on each value in the array
+      // takes three possible arguments: (item, index, array)
+  // DOES NOT RETURN necessarily
+      //will evaluate to undefined if not returned
+  // WILL MUTATE OG ARRAY IF FUNCTIONALITY IS RETURNED
+  // CAN ASSIGN TO NEW ARRAY AND RETURN RESULT THERE
 
 //Basic look
 let arr = [1, 2, 3, 4, 5];
