@@ -4,7 +4,8 @@
       // takes three possible arguments: (item, index, array)
   // DOES NOT RETURN necessarily
       //will evaluate to undefined if not returned
-  // WILL MUTATE ON OG ARRAY IF FUNCTIONALITY IS RETURNED
+  // WILL MUTATE OG ARRAY IF FUNCTIONALITY IS RETURNED
+  // CAN ASSIGN TO NEW ARRAY AND RETURN RESULT THERE
 
 //Basic look
 let arr = [1, 2, 3, 4, 5];
