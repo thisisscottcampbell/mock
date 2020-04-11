@@ -1,7 +1,17 @@
+// DOES NOT RETURN necessarily
+// WILL MUTATE ON OG ARRAY IF FUNCTIONALITY IS RETURNED
 // iterates through an array
 // runs callback on each value in the array
 // three possible: (item, index, array)
 // returns undefined
+
+//Basic look
+let arr = [1, 2, 3, 4, 5];
+
+arr.forEach((num, index) => {
+  return arr[index] = num * 2;
+});
+//--> RETURNS arr = [2, 4, 6, 8, 10]
 
 
 //double value

@@ -7,11 +7,10 @@ const obj = {
   target: 5,
   random: 18
 };
-
 let targetOccurs = 0;
-// ADD CODE HERE
+
 for (let key in obj) {
-  if (key === 'foundNum') {
+  if (key === 'target') {
     targetOccurs++;
   }
 }
@@ -23,8 +22,8 @@ var obj = {
    "b": "test2"
 };
 
-for (let k in obj) {
-  if (obj[k] === "test1") {
+for (let key in obj) {
+  if (obj[key] === "test1") {
       return true;
   }
 }
@@ -39,9 +38,7 @@ const obj = {
 };
 objArray = []
 
-for (let key in obj) {
-  if (obj[key] > 1) objArray.push(obj[key]) 
-}
+
 //LONGER CODE SOLOOYSH EXAMPLES
 // for (let key in obj) {
 //  if (obj[key] > 1) { 

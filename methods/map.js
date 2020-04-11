@@ -1,4 +1,4 @@
-//creates a new array
+//CREATES A NEW ARRAY
 //iterates through an array
 //runs a callback function for each item in array
 //pushes the result of that callback to the new array
