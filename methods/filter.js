@@ -1,10 +1,12 @@
-//Creates a new array
+//CREATES A NEW ARRAY
 // iterates through an array
 // runs a callback function on each value in the array
 //if the callback function returns true, that value will be added to the new array
 //if the callback function  returns false, that value will be irgnored from the new array
 //like map, (item, index, array)
 //filter ALWAYS RETURNS A BOOLEAN
+
+//** for this element, determine whether or not it satsifies these conditions**/
 
 function lessThanFiveLetters(arr){
   return arr.filter(item => {

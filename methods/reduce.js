@@ -1,3 +1,4 @@
+//RETURNS A VALUE
 //accepts a callback function and an optional second parameter
 //iterates through an array
 //runs a callback on each value in the array
