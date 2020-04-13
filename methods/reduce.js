@@ -1,8 +1,8 @@
 //RETURNS A VALUE
 //accepts a callback function and an optional second parameter
 //iterates through an array
-//runs a callback on each value in the array
-//the first parameter to the callback is either the first value in the array or the optional second parameter
+//runs a callback function on each value in the array
+//the first parameter to the callback is either a., the first value in the array or b., the optional second parameter
 // the first parameter to the callback is often called "accumulatoar"
 //the returned value from the callback becomes the new value of the accumulator
 // *** whatever is returned from the callback function becomes the new value of the accumulator
@@ -43,3 +43,4 @@ array.reduce((acc, next) =>{
 },{})
 
 // returns {5:2, 4:2, 1:1}
+
