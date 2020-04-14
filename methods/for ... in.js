@@ -49,3 +49,14 @@ objArray = []
 // for (let key in obj) {
 //   obj[key] > 1 ? objArray.push(obj[key]) : false
 // }
+
+const object = {a: 1, b: 2, c: 3};
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
