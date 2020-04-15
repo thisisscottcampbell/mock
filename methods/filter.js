@@ -52,5 +52,5 @@ function doubleOddNumbers(arr){
 //only return values unqiuely, and only those values that occur dupes
 return array.filter((element, index) => array.indexOf(element) !== index)
 
-//only return values uniquely, i.e., deduped
+//only return values uniquely, i.e., DEDUPE
 return array.filter((element, index) => array.indexOf(element) === index)
