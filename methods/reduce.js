@@ -44,3 +44,24 @@ array.reduce((acc, next) =>{
 
 // returns {5:2, 4:2, 1:1}
 
+let orders = [
+  { amount: 25 },
+  { amount: 25 },
+  { amount: 25 },
+  { amount: 25 }
+]
+
+let totalAmount = orders.reduce(sum, order => {
+  console.log (sum, order)
+  return sum + order.amount
+} 0)
+// log 1: 0, 25
+// log 2: 25, 50
+// log 3: 50, 75
+// log 4: 75, 100
+
+//DEDUPE
+
+array.reduce((accArray, item) => {
+  return accArray.includes(item) ? accArray : [...accArray, item]
+}[])
