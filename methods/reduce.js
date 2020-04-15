@@ -62,6 +62,19 @@ let totalAmount = orders.reduce(sum, order => {
 
 //DEDUPE
 
-array.reduce((accArray, item) => {
+deDupeArray.reduce((accArray, item) => {
   return accArray.includes(item) ? accArray : [...accArray, item]
 }[])
+
+//accArray; 
+  //is my acculator and it is set to the inital value of an empty array; it is what I am reducing deDeupeArray to
+
+//item: 
+  //is the item in deDupeArray that I am evaluating
+
+//accArray.includes(item)
+  //this is the condition against which I am evaluating 'item': is 'item' in accArray?
+
+// accArray : [...accArray, item]
+  // if yes --> then accArray remains as is
+  // if no --> then 'item' is added to accArray
