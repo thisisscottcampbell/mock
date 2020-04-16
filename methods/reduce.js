@@ -44,6 +44,8 @@ array.reduce((acc, next) =>{
 
 // returns {5:2, 4:2, 1:1}
 
+
+//Count the values in an Array
 let orders = [
   { amount: 25 },
   { amount: 25 },
@@ -78,3 +80,12 @@ deDupeArray.reduce((accArray, item) => {
 // accArray : [...accArray, item]
   // if yes --> then accArray remains as is
   // if no --> then 'item' is added to accArray
+
+
+  //GET HIGHEST VALUE IN ARRAY
+
+  let nums = [1,2,4,5,6,7,3,9,3]
+
+  array.reduce((acc, item) => {
+    return acc > item ? acc : item
+  })
