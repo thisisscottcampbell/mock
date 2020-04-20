@@ -6,6 +6,32 @@
   //returns the new array — which is always of the same length as the original
       //new array can be assigned to a variable or used in continued/chained functionality
 
+// --- MAP: under the hood ---
+const map = (array, instructionsFunction) => {
+  const output = [];
+  for (let i = 0; i < array.length; i++){
+    let element = array[i]
+    output.push(instructionsFunction(element));
+  }
+  return output;
+}
+
+const mapArray = [1,2,3]
+const multiplyBy2 = (input) => input * 2;
+const result = map(mapArray, multiplyBy2)
+// --- returns: [2,4,6]
+ //LINE 10: declaring map, passing it an array and a callback 
+ //LINE 11: declaring our array that we will return
+          //as map returns an array
+//LINE 2: initiating our loop through the passed in array, 
+          //as map iterates through an array
+//LINE 13: capturning each element that we will execute the     functionality on
+//LINE 14: executing the functionality on the current element as prescribed by the callback
+//LINE 16: returning our new array where each element has been modified according to the instructions of the callback
+
+//LINES 10-12, invoking map()
+
+
 function doubleValues(arr){
   return arr.map(function(item){
       return item * 2
