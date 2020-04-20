@@ -4,7 +4,7 @@
 //runs a callback function on each value in the array
 //the first parameter to the callback is either a., the first value in the array or b., the optional second parameter
 // the first parameter to the callback is often called "accumulatoar"
-//the returned value from the callback becomes the new value of the accumulator
+//the returned value from the callback becomes the new value of the accumulator at each iteration
 // *** whatever is returned from the callback function becomes the new value of the accumulator
 // *** so acc is what we return
 
@@ -30,7 +30,7 @@ names.reduce((acc, next) =>{
 //returns, 'The team members are player1 player2 player3'
 
 
-//check dupes, or count occurences by created obj
+//check dupes, or count occurences by created obj ... TALLY
 
 let array = [5,4,1,4,5]
 array.reduce((acc, next) =>{
