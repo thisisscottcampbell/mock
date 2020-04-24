@@ -42,6 +42,13 @@ array.reduce((acc, next) =>{
   return acc
 },{})
 
+----OOORRRR-----
+
+array.reduce((acc, next) => {
+  acc[next] ? acc[next]++ : acc[next] = 1;
+return acc
+},{})
+
 // returns {5:2, 4:2, 1:1}
 
 

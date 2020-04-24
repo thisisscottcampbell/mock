@@ -54,3 +54,12 @@ return array.filter((element, index) => array.indexOf(element) !== index)
 
 //only return values uniquely, i.e., DEDUPE
 return array.filter((element, index) => array.indexOf(element) === index)
+
+
+// const intersection = (arrays) = {
+//   return arrays.reduce((acc, next) => { 
+//     return acc.filter(element => next.includes(element))
+//   })
+// }
+
+  
