@@ -34,3 +34,7 @@ Math.max(1,4,2);
 Math.min(1,4,2);
   // --> 1
 
+//Math.pow
+  //return ar1 to the power of arg2
+Math.pow(2,4)
+  // --> 16
