@@ -26,7 +26,11 @@
 
 //Math.max
   //returns highest number
-console.log(Math.max(1,4,2));
+Math.max(1,4,2);
 // --> 4
-  
+
+//Math.min
+  //returns lowest number
+Math.min(1,4,2);
+  // --> 1
 
