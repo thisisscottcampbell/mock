@@ -18,11 +18,15 @@
 (Math.random());
   // --> [some random number between 0 - 1]
 
-  
+
 //Math.sign
   //returns 1 if number is positive; 0 if a num is zero; and -1 if a number is negative;
 (Math.sign(-5));
   // --> -1
 
+//Math.max
+  //returns highest number
+console.log(Math.max(1,4,2));
+// --> 4
   
 
