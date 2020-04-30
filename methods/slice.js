@@ -20,3 +20,8 @@ array.slice(0,1)
 
 array.slice(-1)
 //return ["Cheshire Cat"]
+
+function useSlice(array, startIncluded, endExcluded) {
+  // your code here
+  return array.slice(startIncluded, endExcluded)
+}
