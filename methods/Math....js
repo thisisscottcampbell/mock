@@ -17,7 +17,8 @@
   //generates random number
 (Math.random());
   // --> [some random number between 0 - 1]
-
+  Math.floor(Math.random() * 10) 
+    // random number between 1 and 10
 
 //Math.sign
   //returns 1 if number is positive; 0 if a num is zero; and -1 if a number is negative;
