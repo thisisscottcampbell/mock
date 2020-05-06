@@ -2,7 +2,7 @@
 
 highAndLow = (numbers) => {
   let stringyNumsArray = numbers.split(' ')
-  let numsArray= stringyNumsArray.map(element => Number(element))
+  let numsArray = stringyNumsArray.map(element => Number(element))
   let sorted = numsArry.sort((a,b) => b - a )
   let solution = `${sorted[0]} ${sorted[sorted.length-1]}`
   return solution
