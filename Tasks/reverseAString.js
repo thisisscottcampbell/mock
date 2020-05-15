@@ -1,0 +1,1 @@
+const reversedString = string => [...string].reverse().join('')
