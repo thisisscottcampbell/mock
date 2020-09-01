@@ -7,12 +7,14 @@
       //new array can be assigned to a variable or used in continued/chained functionality
 
 // --- MAP: under the hood ---
-const map = (array, instructionsFunction) => {
+const map = (array, someFunctionality) => {
   const output = [];
+
   for (let i = 0; i < array.length; i++){
     let element = array[i]
-    output.push(instructionsFunction(element));
+    output.push(someFunctionality(element));
   }
+
   return output;
 }
 
