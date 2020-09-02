@@ -34,11 +34,8 @@ const result = map(mapArray, multiplyBy2)
 //LINES 10-12, invoking map()
 
 
-function doubleValues(arr){
-  return arr.map(function(item){
-      return item * 2
-  });
-}
+//create a function that returns an array with all values in input array doubled
+const doubleValues = arr => arr.map(item => item * 2)
 
 function valTimesIndex(arr){
   return arr.map(function(item,idx){
