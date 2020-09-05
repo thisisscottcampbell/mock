@@ -47,8 +47,8 @@ const elementTimesIndex = arr => {
 /*extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name') // ['Elie', 'Tim', 'Matt', 'Colt']
 */
 
-function extractValue(arr,key){
-  return arr.map(function(item){
+const extractValue = (arr,key) => {
+  return arr.map(item => {
       return item[key];
   });
 }
