@@ -53,8 +53,8 @@ const extractValue = (arr,key) => {
   });
 }
 
-function extractFullName(arr){
-  return arr.map(function(item){
+const extractFullName = arr => {
+  return arr.map(item => {
     return item.first + " " + item.last;
   });
 }
