@@ -52,9 +52,3 @@ const extractValue = (arr,key) => {
       return item[key];
   });
 }
-
-const extractFullName = arr => {
-  return arr.map(item => {
-    return item.first + " " + item.last;
-  });
-}
