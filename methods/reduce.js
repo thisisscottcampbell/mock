@@ -63,7 +63,7 @@ let orders = [
 let totalAmount = orders.reduce(sum, order => {
   console.log (sum, order)
   return sum + order.amount
-} 0)
+}, 0)
 // log 1: 0, 25
 // log 2: 25, 50
 // log 3: 50, 75
