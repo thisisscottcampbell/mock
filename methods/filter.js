@@ -10,7 +10,7 @@
 
 //** for this element, determine whether or not it satsifies these conditions**/
 
-function lessThanFiveLetters(arr){
+const lessThanFiveLetters = arr => {
   return arr.filter(item => {
     return item.length > 5 ;
   });
