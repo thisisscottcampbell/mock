@@ -16,7 +16,7 @@ const lessThanFiveLetters = arr => {
   });
 }
 
-function filterByValue(arr,key){
+const filterByValue = (arr,key) => {
   return arr.filter(function(item){
       return item[key] !== undefined;
   });
