@@ -22,8 +22,8 @@ const filterByValue = (arr,key) => {
   });
 }
 
-function find(arr, searchValue){
-  return arr.filter(function(item){
+const find = (arr, searchValue) => {
+  return arr.filter(item => {
       return item === searchValue
   })[0];
 }
