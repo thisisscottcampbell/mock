@@ -28,8 +28,8 @@ const find = (arr, searchValue) => {
   })[0];
 }
 
-function findInObj(arr, key, searchValue){
-  return arr.filter(function(item){
+const findInObj = (arr, key, searchValue) => {
+  return arr.filter(item => {
       return item[key] === searchValue;
   })[0];
 }
