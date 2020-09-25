@@ -41,10 +41,10 @@ const removeVowels = str => {
   }).join('')
 }
 
-function doubleOddNumbers(arr){
-  return arr.filter(function(item){
+const doubleOddNumbers = arr => {
+  return arr.filter(item => {
       return item % 2 !== 0;
-  }).map(function(val){
+  }).map(val => {
       return val *2;
   })
 }
