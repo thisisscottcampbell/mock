@@ -34,9 +34,9 @@ const findInObj = (arr, key, searchValue) => {
   })[0];
 }
 
-function removeVowels(str){
-  var vowels = "aeiou"
-  return str.toLowerCase().split("").filter(function(item){
+const removeVowels = str => {
+  const vowels = "aeiou"
+  return str.toLowerCase().split("").filter(item => {
       return vowels.indexOf(item) === -1;
   }).join('')
 }
