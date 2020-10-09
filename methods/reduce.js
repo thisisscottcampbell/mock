@@ -32,7 +32,7 @@ names.reduce((acc, next) =>{
 
 //check dupes, or count occurences by created obj ... TALLY
 
-let array = [5,4,1,4,5]
+const array = [5,4,1,4,5]
 array.reduce((acc, next) =>{
   if(next in acc) {
     acc[next]++;
@@ -53,14 +53,14 @@ return acc
 
 
 //Count the values in an Array
-let orders = [
+const orders = [
   { amount: 25 },
   { amount: 25 },
   { amount: 25 },
   { amount: 25 }
 ]
 
-let totalAmount = orders.reduce(sum, order => {
+const totalAmount = orders.reduce(sum, order => {
   console.log (sum, order)
   return sum + order.amount
 }, 0)
