@@ -8,7 +8,7 @@
 
 const cats = ['Felix', 'Tigger', 'Garfield', 'Sylvester', 'Felix'];
 
-let cat = cats.find(element => element.length === 9);
+const cat = cats.find(element => element.length === 9);
 
 console.log(cat)
 //returns: 'Garfield' ... and only Garfield even though Sylvester is also 9
