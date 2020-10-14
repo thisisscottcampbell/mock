@@ -24,6 +24,9 @@
       max = Math.floor(max);
       return Math.floor(Math.random() * (max - min) + min);
     }
+
+//Random between 1 and 100
+    Math.floor(Math.random() * 100)
      
 //Math.sign
   //returns 1 if number is positive; 0 if a num is zero; and -1 if a number is negative;
