@@ -1,1 +1,4 @@
-const reversedString = string => [...string].reverse().join('')
+const reversedString = str => [...str].reverse().join('');
+
+
+console.log(reversedString('world'));
