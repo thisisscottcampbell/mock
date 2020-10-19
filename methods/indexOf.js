@@ -15,7 +15,7 @@ console.log(cats.indexOf('Felix', 2))
 // expected output: 4
 
 //is this an index?
-function indexOfString(string1, string2) {
+const indexOfString = (string1, string2) => {
   // your code here
   const index = string1.indexOf(string2) 
   return index ? index : -1

@@ -8,7 +8,7 @@
   // CAN ASSIGN TO NEW ARRAY AND RETURN RESULT THERE
 
 //Basic look
-let arr = [1, 2, 3, 4, 5];
+const arr = [1, 2, 3, 4, 5];
 
 arr.forEach((num, index) => {
   return arr[index] = num * 2;
@@ -27,7 +27,7 @@ doubleVals = (arr) => {
 
 //return evens
 onlyEvans = (arr) => {
-  let newArr = [];
+  const newArr = [];
   arr.forEach(num => {
     (num % 2 === 0){
       newArr.push(num)
@@ -38,7 +38,7 @@ onlyEvans = (arr) => {
 
 //first and last char of each string in array
 showFirstAndLast = (arr) => {
-  var newArr = [];
+  const newArr = [];
   arr.forEach(str => {
       newArr.push(str[0] + str[str.length-1])
   });
