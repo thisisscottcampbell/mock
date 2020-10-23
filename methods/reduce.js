@@ -18,11 +18,11 @@
 //nextValue = second value in the array or first if the optional second param is passed
 
 //get total
-nums.reduce((acc, next) => {
+const sum = nums.reduce((acc, next) => {
   return acc + next
 }, /*opt*/)
 
-let arrayOfNames [ 'player1', 'player2', 'player3' ]
+const arrayOfNames = [ 'player1', 'player2', 'player3' ]
 names.reduce((acc, next) =>{
   return acc += '' next;
 }, 'The team members are')
@@ -33,6 +33,7 @@ names.reduce((acc, next) =>{
 //check dupes, or count occurences by created obj ... TALLY
 
 const array = [5,4,1,4,5]
+
 array.reduce((acc, next) =>{
   if(next in acc) {
     acc[next]++;
@@ -91,7 +92,7 @@ deDupeArray.reduce((accArray, item) => {
 
   //GET HIGHEST VALUE IN ARRAY
 
-  let nums = [1,2,4,5,6,7,3,9,3]
+  const nums = [1,2,4,5,6,7,3,9,3]
 
   array.reduce((acc, item) => {
     return acc > item ? acc : item
