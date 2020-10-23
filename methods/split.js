@@ -4,6 +4,7 @@
 //2. limit: an interger specifying the number of splits. Items after limit will not be included in array,
 
 
-
+const string = 'string'
 string.split("") // with no spaces --> ["s","t","r","i","n","g"]
 string.split() // --> ['string']
+string.split(" ") // --> ['string']

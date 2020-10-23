@@ -36,7 +36,8 @@ const obj = {
   found: 5,
   random: 18
 };
-objArray = []
+
+const objArray = []
 
 
 //LONGER CODE SOLOOYSH EXAMPLES

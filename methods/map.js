@@ -7,12 +7,14 @@
       //new array can be assigned to a variable or used in continued/chained functionality
 
 // --- MAP: under the hood ---
-const map = (array, instructionsFunction) => {
+const map = (array, someFunctionality) => {
   const output = [];
+
   for (let i = 0; i < array.length; i++){
     let element = array[i]
-    output.push(instructionsFunction(element));
+    output.push(someFunctionality(element));
   }
+
   return output;
 }
 
@@ -32,29 +34,21 @@ const result = map(mapArray, multiplyBy2)
 //LINES 10-12, invoking map()
 
 
-function doubleValues(arr){
-  return arr.map(function(item){
-      return item * 2
-  });
-}
+//create a function that returns an array with all values in input array doubled
+const doubleValues = arr => arr.map(el => el * 2)
 
-function valTimesIndex(arr){
-  return arr.map(function(item,idx){
-      return item*idx;
+
+const elementTimesIndex = arr => {
+  return arr.map((el,i) => {
+      return el * i;
   })
 }
 
 /*extractKey([{name: 'Elie'}, {name: 'Tim'}, {name: 'Matt'}, {name: 'Colt'}], 'name') // ['Elie', 'Tim', 'Matt', 'Colt']
 */
 
-function extractValue(arr,key){
-  return arr.map(function(item){
+const extractValue = (arr,key) => {
+  return arr.map(item => {
       return item[key];
-  });
-}
-
-function extractFullName(arr){
-  return arr.map(function(item){
-    return item.first + " " + item.last;
   });
 }

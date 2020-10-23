@@ -10,41 +10,41 @@
 
 //** for this element, determine whether or not it satsifies these conditions**/
 
-function lessThanFiveLetters(arr){
+const lessThanFiveLetters = arr => {
   return arr.filter(item => {
     return item.length > 5 ;
   });
 }
 
-function filterByValue(arr,key){
+const filterByValue = (arr,key) => {
   return arr.filter(function(item){
       return item[key] !== undefined;
   });
 }
 
-function find(arr, searchValue){
-  return arr.filter(function(item){
+const find = (arr, searchValue) => {
+  return arr.filter(item => {
       return item === searchValue
   })[0];
 }
 
-function findInObj(arr, key, searchValue){
-  return arr.filter(function(item){
+const findInObj = (arr, key, searchValue) => {
+  return arr.filter(item => {
       return item[key] === searchValue;
   })[0];
 }
 
-function removeVowels(str){
-  var vowels = "aeiou"
-  return str.toLowerCase().split("").filter(function(item){
+const removeVowels = str => {
+  const vowels = "aeiou"
+  return str.toLowerCase().split("").filter(item => {
       return vowels.indexOf(item) === -1;
   }).join('')
 }
 
-function doubleOddNumbers(arr){
-  return arr.filter(function(item){
+const doubleOddNumbers = arr => {
+  return arr.filter(item => {
       return item % 2 !== 0;
-  }).map(function(val){
+  }).map(val => {
       return val *2;
   })
 }
@@ -54,12 +54,4 @@ return array.filter((element, index) => array.indexOf(element) !== index)
 
 //only return values uniquely, i.e., DEDUPE
 return array.filter((element, index) => array.indexOf(element) === index)
-
-
-// const intersection = (arrays) = {
-//   return arrays.reduce((acc, next) => { 
-//     return acc.filter(element => next.includes(element))
-//   })
-// }
-
   
