@@ -100,6 +100,6 @@ deDupeArray.reduce((accArray, item) => {
 
 //Flatten a multi-dimensional array
 
-  let flatArray = array.reduce((acc, item) => {
+  const flatArray = array.reduce((acc, item) => {
     return acc.concat(item);
   });
