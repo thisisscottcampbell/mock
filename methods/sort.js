@@ -8,8 +8,12 @@
       //if return greater than 0: b before a
 
 const nums = [1,8,5,7,2]
+const chars = ['all', 'bat', 'die', 'fool', 'go', 'cat', 'easy']
 
+const alphabetize = chars.sort();
 const upSort = nums.slice().sort((a,b) => a-b); //return: [1,2,5,7,8]
 const downSort = nums.slice().sort((a,b) => b-a) //return: [8,7,5,2,1]
+
+console.log(alphabetize);
 
 //without slice(), nums would be assigned the return value!
