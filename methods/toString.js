@@ -2,5 +2,5 @@
 
 Number(17).toString(); // this will not
 
-var num = 17;
+const num = 17;
 num.toString(); //this will not
