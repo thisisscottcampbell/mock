@@ -2,9 +2,7 @@ const listSquared = (m, n, twoples = []) => {
 
     const divisors = [];
     
-
     if (m === n) return twoples;
-
 
     for (let i = m; i > 0; i -= 1) {
       const divisor = i;
@@ -15,7 +13,6 @@ const listSquared = (m, n, twoples = []) => {
   
     const sqSum = sqauredDivs.reduce((acc, next) => acc += next);
   
-
     if (Math.sqrt(sqSum) % 1 === 0) twoples.push([m, sqSum])
     
     return listSquared(m+=1, n, twoples)
