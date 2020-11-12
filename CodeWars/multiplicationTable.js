@@ -12,7 +12,7 @@
 
 // Each value on the table should be equal to the value of multiplying the number in its first row times the number in its first column.
 
-function multiplicationTable(row, col, i = 1, tables = []){
+const multiplicationTable = (row, col, i = 1, tables = []) => {
   
     //Base Case
     if (i > row) return tables;
@@ -23,13 +23,13 @@ function multiplicationTable(row, col, i = 1, tables = []){
     
     let currVal = 1;
     
-     //Updates    
+     //updates    
     while (currVal <= currTableLength) {
       
-      let pushVal = currVal * currFactor;
+      const pushVal = currVal * currFactor;
       
       currTable.push(pushVal);
-      currVal += 1
+      currVal += 1;
     }
     
     const newTable = [...tables, currTable];
@@ -38,4 +38,6 @@ function multiplicationTable(row, col, i = 1, tables = []){
     //RECURSIVE CASE
     return multiplicationTable(row, col, i, newTable)
     
-    }
+}
+
+console.log(multiplicationTable(3,3))
