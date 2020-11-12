@@ -1,6 +1,6 @@
 //you are given a string of space separated numbers, and have to return the highest and lowest number as string seperated by space.
 
-highAndLow = (numbers) => {
+const highAndLow = (numbers) => {
   const stringyNumsArray = numbers.split(' ')
   const numsArray = stringyNumsArray.map(element => Number(element))
   const sorted = numsArry.sort((a,b) => b - a )
