@@ -10,10 +10,15 @@
 //Basic look
 const arr = [1, 2, 3, 4, 5];
 
-arr.forEach((num, index) => {
-  return arr[index] = num * 2;
+const doubledArr = [];
+
+arr.forEach((num) => {
+  const doubledNum = num * 2;
+  
+  doubledArr.push(doubledNum);
 });
-//--> RETURNS arr = [2, 4, 6, 8, 10]
+
+//console.log(doubledArr)--> RETURNS arr = [2, 4, 6, 8, 10]
 
 
 //double value
