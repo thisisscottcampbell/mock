@@ -10,16 +10,20 @@
 
 //** for this element, determine whether or not it satsifies these conditions**/
 
+const arr = ['cat', 'rabbit', 'dog', 'alligator', 'gorilla', 'fish', 'shark', 'rat', 'turtle']
+
 const lessThanFiveLetters = arr => {
-  return arr.filter(item => {
-    return item.length > 5 ;
-  });
+  return arr.filter(item => item.length < 5)
 }
 
+const lessThanFive = lessThanFiveLetters(arr)
+console.log(lessThanFive)
+//[ 'cat', 'dog', 'fish', 'rat' ]
+
+
+
 const filterByValue = (arr,key) => {
-  return arr.filter(function(item){
-      return item[key] !== undefined;
-  });
+  return arr.filter(item => item[key] !== undefined)
 }
 
 const find = (arr, searchValue) => {
