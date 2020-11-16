@@ -38,6 +38,8 @@ const findInObj = (arr, key, searchValue) => {
   })[0];
 }
 
+
+
 const removeVowels = str => {
   const vowels = "aeiou"
   return str.toLowerCase().split("").filter(item => {
