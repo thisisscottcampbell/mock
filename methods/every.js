@@ -4,25 +4,25 @@
 
 
 
-allLowerCase = (str) => {
+const allLowerCase = (str) => {
   return str.split('').every(letter => {
     return letter === letter.toLowerCase();
   })
 }
 
-hasNoDuplicates = (arr) => {
+const hasNoDuplicates = (arr) => {
   return arr.every(item => {
     return arr.indexOf(item) === arr.lastIndexOf(item)
   })
 }
 
-hasCertainKey = (arr, key) => {
+const hasCertainKey = (arr, key) => {
   return arr.every(item => {
     return key in item
   })
 }
 
-hasCertainValue = (arr, key, searchValue) => {
+const hasCertainValue = (arr, key, searchValue) => {
   return arr.every(item => {
     return item[key] === searchValue;
   })
