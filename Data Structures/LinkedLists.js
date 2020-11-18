@@ -58,7 +58,7 @@ class LinkedList {
         const preRemoveNodeNewNext = removeNode.next;
         preRemoveNode.next = preRemoveNodeNewNext;
         this.length -= 1;
-        // return this;
+        return this;
     }
     traverseToIndex (i) {
         let counter = 0;
@@ -70,15 +70,17 @@ class LinkedList {
         }
         return currNode;
     }
-}
+} 
 
 const myList = new LinkedList(10);
 
 myList.append(5);
 myList.prepend(7);
-console.log(myList.printList());
+console.log('prepend 7', myList.printList());
 myList.insert(99, 99);
-console.log(myList.printList());
+console.log('insert 99 at 99', myList.printList());
 myList.insert(12, 2)
-console.log(myList.printList());
+console.log('insert 12 at 2', myList.printList());
+myList.remove(3);
+console.log('remove node at index 3', myList.printList());
 console.log(myList)
