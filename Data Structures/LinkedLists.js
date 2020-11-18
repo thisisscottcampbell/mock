@@ -52,6 +52,14 @@ class LinkedList {
         this.length +=  1;
         return this;
     }
+    remove(i)  {
+        const preRemoveNode = this.traverseToIndex(i - 1);
+        const removeNode  = preRemoveNode.next;
+        const preRemoveNodeNewNext = removeNode.next;
+        preRemoveNode.next = preRemoveNodeNewNext;
+        this.length -= 1;
+        // return this;
+    }
     traverseToIndex (i) {
         let counter = 0;
 
