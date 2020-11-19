@@ -9,10 +9,10 @@ const names = ['Brady', 'Bird', 'BobbyOrr', 'Teddy'];
 const numbers = ['12', '33', '4', '9']
 
 for (let i = 0; i < names.length ; i++) {
-  let name = names[i]
+  const name = names[i];
   for (let j = 0; j < numbers.length; j++) {
-  	let number = numbers[j]
-    if (i === j) phoneBook[name] = number
+  	const number = numbers[j];
+    if (i === j) jerseyNum[name] = number
   } 
 }
   //obj.key3 = "value3"
