@@ -30,26 +30,26 @@ const mergeRanges = intervals => {
     const ranges = [];
     let newRangeCheck;
   
-//     for (let i = 0; i < ints.length; i+= 1) {
+    for (let i = 0; i < ints.length; i+= 1) {
   
-//         const curr = ints[i];
-//         let next;
-//         const currCheck = curr[1];
-//         let nextCheck;
-//         let lastRange = ranges.length > 0 ? ranges[ranges.length - 1] : [];
+        const curr = ints[i];
+        let next;
+        const currCheck = curr[1];
+        let nextCheck;
+        let lastRange = ranges.length > 0 ? ranges[ranges.length - 1] : [];
    
-//         if (ints[i + 1]) next = ints[i + 1];
-//         if (next) nextCheck = next[0];
+        if (ints[i + 1]) next = ints[i + 1];
+        if (next) nextCheck = next[0];
       
 //      //last subb range array: 
-//         if (i === ints.length - 1) {
+        if (i === ints.length - 1) {
           
-//             if (lastRange.length === 1) {
-//                 const endRange = curr[1];
-//                 lastRange.push(endRange)
-//             }
-//             else ranges.push(curr);
-//         }    
+            if (lastRange.length === 1) {
+                const endRange = curr[1];
+                lastRange.push(endRange)
+            }
+            else ranges.push(curr);
+        }    
   
 //       //either start a new range, or push sub range array:
 //         if (ranges.length < 1) {
