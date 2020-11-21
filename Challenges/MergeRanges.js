@@ -64,15 +64,15 @@ const mergeRanges = intervals => {
   
   
 //       //either starting a new range, or push sub range array
-//         if (lastRange.length === 2) {
-//             if (currCheck < nextCheck) ranges.push(curr);
+        if (lastRange.length === 2) {
+            if (currCheck < nextCheck) ranges.push(curr);
   
-//             if (currCheck >= nextCheck) {
-//                 const newRange = [curr[0]];
-//                 newRangeCheck = currCheck;
-//                 ranges.push(newRange);
-//             }
-//         }
+            if (currCheck >= nextCheck) {
+                const newRange = [curr[0]];
+                newRangeCheck = currCheck;
+                ranges.push(newRange);
+            }
+        }
   
 //     //either resolving an unresolved merged range, or extending
 //         if (lastRange.length === 1) {
