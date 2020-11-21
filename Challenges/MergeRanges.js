@@ -25,10 +25,10 @@ After sorting, think about how to merge the intervals together.
 */
 
 const mergeRanges = intervals => {
-//     const ints = intervals.sort((a, b) => a[0] - b[0]);
+    const ints = intervals.sort((a, b) => a[0] - b[0]);
 
-//     const ranges = [];
-//     let newRangeCheck;
+    const ranges = [];
+    let newRangeCheck;
   
 //     for (let i = 0; i < ints.length; i+= 1) {
   
