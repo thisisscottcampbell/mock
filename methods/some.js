@@ -11,7 +11,7 @@ arr.some(num => {
 //true
 
 hasEvenNum = (arr) => {
-  arr.some(num => {
+  return arr.some(num => {
     return num % 2 === 0;
   })
 }
