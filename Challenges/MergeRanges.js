@@ -75,26 +75,26 @@ const mergeRanges = intervals => {
         }
   
 //     //either resolving an unresolved merged range, or extending
-//         if (lastRange.length === 1) {
+        if (lastRange.length === 1) {
   
-//             if (newRangeCheck < curr[1]) {
+            if (newRangeCheck < curr[1]) {
   
-//                 const endRange = curr[1];
-//                 lastRange.push(endRange);
+                const endRange = curr[1];
+                lastRange.push(endRange);
         
-//                 newRangeCheck = undefined;
-//             }
-//         }
-//     };
+                newRangeCheck = undefined;
+            }
+        }
+    };
     
-//       return ranges
-//   };
+      return ranges
+  };
   
-//   intervals = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]
-//   console.log(mergeRanges(intervals)) 
-//   //[[0, 1], [3, 8], [9, 12]])
+  intervals = [[0, 1], [3, 5], [4, 8], [10, 12], [9, 10]]
+  console.log(mergeRanges(intervals)) 
+  //[[0, 1], [3, 8], [9, 12]])
   
-//   intervals = [[8, 10], [15, 18], [1, 3], [2, 6]]
-//   console.log(mergeRanges(intervals))
-//   //[[1, 6], [8, 10], [15, 18]])
-// module.exports = {mergeRanges}
+  intervals = [[8, 10], [15, 18], [1, 3], [2, 6]]
+  console.log(mergeRanges(intervals))
+  //[[1, 6], [8, 10], [15, 18]])
+
