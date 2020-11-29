@@ -11,22 +11,25 @@
 
 
 
-// const fizzbuzz = num => { 
-//   const pusher = (input, arr) => arr.push(input) 
-//   const fbArr = new Array();
+const fizzbuzz = num => { 
+  const pusher = (input, arr) => arr.push(input) 
+  const fbArr = new Array();
   
 
-//   let curr = 1;
-//   while (num >= curr) {
-//       if (curr % 3 === 0 && curr % 5 === 0) pusher('fizzbuzz', fbArr);
-//       else if (curr % 3 === 0) pusher('fizz', fbArr);
-//       else if (curr % 5 === 0) pusher('buzz', fbArr);
-//       else pusher(curr, fbArr);
+  let curr = 1;
+  while (num >= curr) {
+      if (curr % 3 === 0 && curr % 5 === 0) pusher('fizzbuzz', fbArr);
+      else if (curr % 3 === 0) pusher('fizz', fbArr);
+      else if (curr % 5 === 0) pusher('buzz', fbArr);
+      else pusher(curr, fbArr);
 
-//       curr++;
-//   }
-//   return fbArr;
-// };
+      curr++;
+  }
+  return fbArr;
+};
+
+//OR
+
 
 const fizzbuzz = (num, fbArr = [] ) => {
   let currStr = '';
