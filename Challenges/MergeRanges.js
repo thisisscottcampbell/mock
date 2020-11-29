@@ -41,7 +41,7 @@ const mergeRanges = intervals => {
         if (ints[i + 1]) next = ints[i + 1];
         if (next) nextCheck = next[0];
       
-//      //last subb range array: 
+     //last subb range array: 
         if (i === ints.length - 1) {
           
             if (lastRange.length === 1) {
@@ -51,7 +51,7 @@ const mergeRanges = intervals => {
             else ranges.push(curr);
         }    
   
-//       //either start a new range, or push sub range array:
+      //either start a new range, or push sub range array:
         if (ranges.length < 1) {
             if (currCheck < nextCheck) ranges.push(curr);
   
@@ -63,7 +63,7 @@ const mergeRanges = intervals => {
         }
   
   
-//       //either starting a new range, or push sub range array
+      //either starting a new range, or push sub range array
         if (lastRange.length === 2) {
             if (currCheck < nextCheck) ranges.push(curr);
   
@@ -74,7 +74,7 @@ const mergeRanges = intervals => {
             }
         }
   
-//     //either resolving an unresolved merged range, or extending
+    //either resolving an unresolved merged range, or extending
         if (lastRange.length === 1) {
   
             if (newRangeCheck < curr[1]) {
@@ -97,4 +97,4 @@ const mergeRanges = intervals => {
   intervals = [[8, 10], [15, 18], [1, 3], [2, 6]]
   console.log(mergeRanges(intervals))
   //[[1, 6], [8, 10], [15, 18]])
-
+module.exports = {mergeRanges}
