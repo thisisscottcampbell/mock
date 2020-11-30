@@ -41,3 +41,31 @@ const multiplicationTable = (row, col, i = 1, tables = []) => {
 }
 
 console.log(multiplicationTable(3,3))
+
+
+const multiplicationTable = (size, table = [], i = 0, prevTable = []) => {
+
+  if (table.length === size) return table
+  
+  if (i === 0) {
+    let num = 1;
+    const innerTable = [];
+    
+    while (num <= size) {
+      innerTable.push(num);
+      
+      num++
+    }
+    
+    table.push(innerTable);
+    return multiplicationTable(size, table, ++i, innerTable);
+  }
+  
+ 
+  const newTable = prevTable.map((num, i) => num + i + 1);
+  
+  table.push(newTable)
+    
+  return multiplicationTable(size, table, ++i, newTable);
+
+}
