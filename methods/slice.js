@@ -33,32 +33,46 @@ function useSlice(array, startIncluded, endExcluded) {
 
 
 const str = 'POPzzzzEGG';
+let currSlice = str;
 
 
 const egg = str.slice(-3);
+currSlice = str.slice(-3);
 
 console.log(egg);
 //'EGG'
 console.log(str);
 //'POPzzzzEGG'
+console.log(currSlice);
+//'EGG'
 
-const noEgg = str.slice(0, -3)
+const noEgg = str.slice(0, -3);
+currSlice = str.slice(0, -3);
 
 console.log(noEgg);
 //'POPzzzz'
 console.log(str);
 //'POPzzzzEGG'
+console.log(currSlice);
+//'POPzzzz'
 
 const pop = str.slice(0, 3);
+currSlice = str.slice(0, 3);
 
 console.log(pop);
 //'POP'
 console.log(str);
 //'POPzzzzEGG'
+console.log(currSlice);
+//'POP'
 
-const noPop  = str.slice(3)
+const noPop  = str.slice(3);
+console.log(str.slice(3))
+currSlice = str.slice(3);
 
 console.log(noPop);
 //zzzzEGG
 console.log(str);
 //'POPzzzzEGG'
+console.log(currSlice);
+//'zzzzEGG'
