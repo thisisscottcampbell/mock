@@ -27,17 +27,38 @@ function useSlice(array, startIncluded, endExcluded) {
 }
 
 
-const str = 'zzzzEGG';
+
+//STRING STUFF
+
+
+
+const str = 'POPzzzzEGG';
+
+
 const egg = str.slice(-3);
 
 console.log(egg);
 //'EGG'
 console.log(str);
-//'zzzzEGG'
+//'POPzzzzEGG'
 
 const noEgg = str.slice(0, -3)
 
 console.log(noEgg);
-//'zzzz'
+//'POPzzzz'
 console.log(str);
-//'zzzzEGG'
+//'POPzzzzEGG'
+
+const pop = str.slice(0, 3);
+
+console.log(pop);
+//'POP'
+console.log(str);
+//'POPzzzzEGG'
+
+const noPop  = str.slice(3)
+
+console.log(noPop);
+//zzzzEGG
+console.log(str);
+//'POPzzzzEGG'
