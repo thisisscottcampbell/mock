@@ -9,19 +9,35 @@
 
 const cats = ["Felix", "Garfield", "Tigger", "Sylvester", "Cheshire Cat"]
 
-array.slice(2)
+cats.slice(2)
 //returns ["Tigger", "Sylvester", "Cheshire Cat"]
 
-array.slice(0, 2)
+cats.slice(0, 2)
 //returns ["Felix", "Garfield"] 
 
-array.slice(0,1)
+cats.slice(0,1)
 //returns ["Felix"]
 
-array.slice(-1)
+cats.slice(-1)
 //return ["Cheshire Cat"]
 
 function useSlice(array, startIncluded, endExcluded) {
   // your code here
   return array.slice(startIncluded, endExcluded)
 }
+
+
+const str = 'zzzzEGG';
+const egg = str.slice(-3);
+
+console.log(egg);
+//'EGG'
+console.log(str);
+//'zzzzEGG'
+
+const noEgg = str.slice(0, -3)
+
+console.log(noEgg);
+//zzzz
+console.log(str);
+//'zzzzEGG'
