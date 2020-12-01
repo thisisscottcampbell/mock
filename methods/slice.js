@@ -38,6 +38,6 @@ console.log(str);
 const noEgg = str.slice(0, -3)
 
 console.log(noEgg);
-//zzzz
+//'zzzz'
 console.log(str);
 //'zzzzEGG'
