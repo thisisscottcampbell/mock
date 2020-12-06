@@ -9,19 +9,70 @@
 
 const cats = ["Felix", "Garfield", "Tigger", "Sylvester", "Cheshire Cat"]
 
-array.slice(2)
+cats.slice(2)
 //returns ["Tigger", "Sylvester", "Cheshire Cat"]
 
-array.slice(0, 2)
+cats.slice(0, 2)
 //returns ["Felix", "Garfield"] 
 
-array.slice(0,1)
+cats.slice(0,1)
 //returns ["Felix"]
 
-array.slice(-1)
+cats.slice(-1)
 //return ["Cheshire Cat"]
 
 function useSlice(array, startIncluded, endExcluded) {
   // your code here
   return array.slice(startIncluded, endExcluded)
 }
+
+
+
+//STRING STUFF
+
+
+
+const str = 'POPzzzzEGG';
+let currSlice = str;
+
+
+const egg = str.slice(-3);
+currSlice = str.slice(-3);
+
+console.log(egg);
+//'EGG'
+console.log(str);
+//'POPzzzzEGG'
+console.log(currSlice);
+//'EGG'
+
+const noEgg = str.slice(0, -3);
+currSlice = str.slice(0, -3);
+
+console.log(noEgg);
+//'POPzzzz'
+console.log(str);
+//'POPzzzzEGG'
+console.log(currSlice);
+//'POPzzzz'
+
+const pop = str.slice(0, 3);
+currSlice = str.slice(0, 3);
+
+console.log(pop);
+//'POP'
+console.log(str);
+//'POPzzzzEGG'
+console.log(currSlice);
+//'POP'
+
+const noPop  = str.slice(3);
+console.log(str.slice(3))
+currSlice = str.slice(3);
+
+console.log(noPop);
+//zzzzEGG
+console.log(str);
+//'POPzzzzEGG'
+console.log(currSlice);
+//'zzzzEGG'
