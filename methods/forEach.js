@@ -32,7 +32,7 @@ const onlyEvens = (arr) => {
 }
 
 //first and last char of each string in array
-showFirstAndLast = (arr) => {
+const showFirstAndLast = (arr) => {
   const newArr = [];
   
   arr.forEach(str => {
