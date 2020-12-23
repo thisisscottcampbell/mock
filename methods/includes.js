@@ -5,14 +5,14 @@
     //the index from which to start search
 
 //
-array = [1, 2, 3]
+const arr = [1, 2, 3]
 
-array.includes(2)      // true
-array.includes(4)      // false
-array.includes(3, 3)   // false
+arr.includes(2)      // true
+arr.includes(4)      // false
+arr.includes(3, 3)   // false
 
 arrayFromIndex = [1, 2, 3, 10, 3 ]
 
-array.includes(2) //true
-array.includes(2, 2) //false 
-array.includes(3, 4) //true 
+arrayFromIndex.includes(2) //true
+arrayFromIndex.includes(2, 2) //false 
+arrayFromIndex.includes(3, 4) //true 
