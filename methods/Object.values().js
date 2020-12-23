@@ -7,5 +7,5 @@ const cats = {
   Tigger: "lit"
 }
 
-console.log(Object.values(object1));
+console.log(Object.values(cats));
 //returns: ["lazy", "far-out", "lit"]
