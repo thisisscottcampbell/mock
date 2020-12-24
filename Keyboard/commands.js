@@ -15,3 +15,9 @@
 
 6. option + down
 //move the current line down one line
+
+7. option + left
+//move the cursor to the beginning of the current, or previous, string
+
+8. option + right 
+//move the cursor to the begining of the emd of the current, or next, string
