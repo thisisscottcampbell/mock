@@ -11,7 +11,7 @@ arr.includes(2)      // true
 arr.includes(4)      // false
 arr.includes(3, 3)   // false
 
-arrayFromIndex = [1, 2, 3, 10, 3 ]
+const arrayFromIndex = [1, 2, 3, 10, 3 ]
 
 arrayFromIndex.includes(2) //true
 arrayFromIndex.includes(2, 2) //false 
