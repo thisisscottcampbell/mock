@@ -3,15 +3,15 @@
 //if the callback returns true for at least one single value, entire function returns true
 //The result of some will ALWAYS be a boolean
 
-const arr = [1,2,3]
+const arr = [1, 2, 3];
 
-arr.some(num => {
-  return num < 2
-})
+arr.some((num) => {
+	return num < 2;
+});
 //true
 
-hasEvenNum = (arr) => {
-  return arr.some(num => {
-    return num % 2 === 0;
-  })
-}
+const hasEvenNum = (arr) => {
+	return arr.some((num) => {
+		return num % 2 === 0;
+	});
+};

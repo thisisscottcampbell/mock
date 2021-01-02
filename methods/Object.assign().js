@@ -1,14 +1,19 @@
 const objWithAssignations = { a: 2, b: 3, c: 4 };
-const objToReceiveAssignments = {};
+const objToGetAssignments = {};
 
-Object.assign(objToReceiveAssignments, objWithAssignations);
+Object.assign(objToGetAssignments, objWithAssignations);
 
-console.log(objToReceiveAssignments);
-//{a: 2, b: 3, c: 4}
+console.log(objToGetAssignments);
 
 const otherObjToReceiveAssignments = { z: 20 };
 
 Object.assign(otherObjToReceiveAssignments, objWithAssignations);
 
 console.log(otherObjToReceiveAssignments);
-//{ z: 20, a: 2, b: 3, c: 4 }
+
+Object.getOwnPropertyNames(objWithAssignations).forEach(
+	(property) => delete objWithAssignations[property]
+);
+
+console.log(objWithAssignations);
+//{}
