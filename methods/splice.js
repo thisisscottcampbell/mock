@@ -15,14 +15,12 @@
 
 const array = [1,2,3,4,5,6]
 
-//assign removed element to a label
 const spliceReturnsArrayOfDeletedElements = array.splice(2,2, 'insert me')
-console.log(spliceReturnsArrayOfDeletedElements);
-  //[3,4]
 
-//log array to see value after splice
+console.log(spliceReturnsArrayOfDeletedElements);
+//[3,4]
 console.log(array)
-  //[1,2,'insert me', 5,6]
+//[1,2,'insert me', 5,6]
 
 const arr = [1,2,3,4,5,6]
 const spliced = arr.splice(1,1);
