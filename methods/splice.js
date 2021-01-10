@@ -1,6 +1,14 @@
+//The splice() method:
+  //a. changes the original array and
+  //b. returns an array that contains the deleted elements
+
 //CAN Take up to three inputs
-//array.splice(targetIdx, deleteHowMany, insertThis);
-//modifies array
+//1. Where to delete
+//2. How many to delete
+//3. Relace deleted elements with...
+
+
+
 
 const array = [1,2,3,4,5,6]
 
