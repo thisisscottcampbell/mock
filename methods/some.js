@@ -5,9 +5,7 @@
 
 const arr = [1, 2, 3];
 
-arr.some((num) => {
-	return num < 2;
-});
+arr.some((num) => num < 2);
 //true
 
 const hasEvenNum = (arr) => {
