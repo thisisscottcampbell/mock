@@ -8,3 +8,12 @@ const catsAndDogs = [...cats, ...dogs];
 const catsAndDogsAndBirds = [...catsAndDogs, 'woodstock'];
 
 // ['buddy', 'felix', 'garfield', 'pluto', 'snoopy', 'brian', 'woodstock']
+
+const person = {
+	name: 'Ace',
+	age: 24,
+};
+
+const newPerson = { ...person, spiritAnimal: 'otter' };
+
+//newPerson ... { name: 'Ace', age: 24, spiritAnimal: 'otter }
