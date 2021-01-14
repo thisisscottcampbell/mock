@@ -17,3 +17,6 @@ const person = {
 const newPerson = { ...person, spiritAnimal: 'otter' };
 
 //newPerson ... { name: 'Ace', age: 24, spiritAnimal: 'otter }
+
+const copyCats = [...cats];
+// ['buddy', 'felix', 'garfield']
