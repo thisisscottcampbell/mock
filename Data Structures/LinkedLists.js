@@ -88,12 +88,16 @@
 class LinkedList {
     constructor() {
         this.head = null,
-        this.tail = null
+        this.tail = null,
+        this.length = 0
     }
 
     append(value) {
         //sanity
-        if (!this.tail) this.head = this.tail = new Node(value)
+        if (!this.tail) {
+            this.head = this.tail = new Node(value);
+            this.length += 1;
+        }
         
         else {
             const newTail = new Node(value)
@@ -102,6 +106,8 @@ class LinkedList {
             this.tail = newTail;
             prevTail.next = newTail;
             newTail.previous = prevTail;
+
+            this.length += 1;
         }
     }
 
@@ -117,6 +123,7 @@ class LinkedList {
             prevHead.previous = newHead;
             newHead.next = prevHead;
         }
+        this.length += 1;
     }
 
     deleteHead() {
@@ -130,19 +137,25 @@ class LinkedList {
             this.head = newHead;
             newHead.previous = null
         }
+
+        this.length -= 1;
         return removeHead.value;
     }
 
     deleteTail() {
         if (!this.tail) return null
 
-        let removeTail = this.tail;
+        const removeTail = this.tail;
+        const newTail = removeTail.previous;
+
         if (this.head === this.tail) this.head = this.tail = null;
 
         else {
-            this.tail = removeTail.previous;
-            this.tail.next = null;
+            this.tail = newTail;
+            newTail.next = null;
         }
+        
+        this.length -= 1;
         return removeTail.value;
     }
 
@@ -155,6 +168,38 @@ class LinkedList {
             currentNode = currentNode.next
         }
         return null;
+    }
+
+    traverseList(idx) {
+        if (idx > this.length) return;
+        let counter = 1;
+        let targetNode = this.head;
+
+        while (counter < idx) {
+            targetNode = targetNode.next;
+            counter += 1;
+        }
+        return targetNode;
+    }
+    
+
+    removeNode(idx) {
+        if (idx === 1) return this.deleteHead();
+        if (idx === this.length) return this.deleteTail();
+
+        const deleteNode = this.traverseList(idx);
+        const nextNode = deleteNode.next;
+        const previousNode = deleteNode.previous;
+        nextNode.previous = previousNode;
+        previousNode.next = nextNode
+
+        this.length -=1;
+
+        return this;
+    }
+
+    insertNode(idx, val) {
+
     }
 }   
 
@@ -173,30 +218,58 @@ let list = new LinkedList();
 list.append(1);
 list.append(2);
 list.append(3);
-//console.log(list)
+// const trav2 = list.traverseList(2);
+// const head = list.traverseList(1);
+// const tail = list.traverseList(list.length);
+// console.log(head);
+// console.log(trav2);
+// console.log(tail);
+//console.log(list.length)
+// console.log(list)
 // 1 -> 2 -> 3
 
-list.prepend(69);
+list.removeNode(2);
+console.log(list)
+// 1 -> 3
+
+// list.prepend(69);
 //console.log(list)
 //69 -> 1 -> 2 -> 3 
-list.append(13);
+// list.append(13);
 //console.log(list)
 //69 -> 1 -> 2 -> 3 -> 13
 
-const find13 = list.search(13);
+// const find13 = list.search(13);
 //console.log(find13);
 //the node
-const find4 = list.search(4);
+// const find4 = list.search(4);
 //console.log(find4);
 
-list.deleteHead();
+//list.deleteHead();
+//console.log(list.length)
 //console.log(list);
-// s1 -> 2 -> 3 -> 13
+// 1 -> 2 -> 3 -> 13
 
-list.deleteHead();
+// list.deleteHead();
 //console.log(list);
 // 2 -> 3 -> 13
 
-list.deleteHead();
-console.log(list);
+// list.deleteHead();
+//console.log(list);
 // 3 -> 13
+
+//list.prepend(6);
+//list.prepend(7);
+// list.prepend(69);
+//console.log(list);
+//console.log(list.length)
+// 69 -> 7 -> 6 -> 3 -> 13
+
+// list.deleteTail()
+// console.log(list);
+// 69 -> 7 -> 6 -> 3 
+
+// list.deleteHead()
+//console.log(list);
+// 7 -> 6 -> 3 
+
