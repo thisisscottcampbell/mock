@@ -92,7 +92,7 @@ class LinkedList {
     }
 
     append(value) {
-        //if there is no List"
+        //sanity
         if (!this.tail) this.head = this.tail = new Node(value)
         
         else {
@@ -106,25 +106,29 @@ class LinkedList {
     }
 
     prepend(value) {
-        //if the list is empty
+        //sanity
         if(!this.head) this.head = this.tail = new Node(value);
 
         else {
-            let oldHead = this.head;
-            this.head = new Node(value);
-            oldHead.previous = this.head;
-            this.head.next = oldHead;
+            const newHead = new Node(value);
+            const prevHead = this.head;
+
+            this.head = newHead;
+            prevHead.previous = newHead;
+            newHead.next = prevHead;
         }
     }
 
     deleteHead() {
         if (!this.head) return null;
 
-        let removeHead = this.head;
+        const removeHead = this.head;
+        const newHead = removeHead.next;
+
         if (this.head === this.tail) this.head = this.tail = null;
         else {
-            this.head = this.head.next;
-            this.head.previous = null
+            this.head = newHead;
+            newHead.previous = null
         }
         return removeHead.value;
     }
@@ -169,5 +173,30 @@ let list = new LinkedList();
 list.append(1);
 list.append(2);
 list.append(3);
+//console.log(list)
+// 1 -> 2 -> 3
 
+list.prepend(69);
+//console.log(list)
+//69 -> 1 -> 2 -> 3 
+list.append(13);
+//console.log(list)
+//69 -> 1 -> 2 -> 3 -> 13
+
+const find13 = list.search(13);
+//console.log(find13);
+//the node
+const find4 = list.search(4);
+//console.log(find4);
+
+list.deleteHead();
+//console.log(list);
+// s1 -> 2 -> 3 -> 13
+
+list.deleteHead();
+//console.log(list);
+// 2 -> 3 -> 13
+
+list.deleteHead();
 console.log(list);
+// 3 -> 13
