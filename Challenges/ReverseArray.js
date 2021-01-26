@@ -6,19 +6,31 @@ to the array prototype while solving the problem.
 
 */
 
-const reverseArray = arr => {
+const reverseArray = (arr) => {
+	const cache = {};
 
-    const cache = {}
-    
-    arr.forEach((num, i) => cache[arr.length - (i + 1)] = num);
+	arr.forEach((num, i) => (cache[arr.length - (i + 1)] = num));
 
-    for (let key in cache) {
-        const currVal = cache[key]
-        arr[key] = currVal
-    }
-    
-    return arr
-     
+	for (let key in cache) {
+		const currVal = cache[key];
+		arr[key] = currVal;
+	}
+
+	return arr;
+};
+
+//OR
+
+const revArray = (arr) => {
+	if (arr.length === 0 || arr.length === 1) return arr;
+
+	for (let i = 0, j = arr.length - 1; j > i && j !== i; i++, j--) {
+		const firstVal = arr[i];
+		const lastVal = arr[j];
+		arr[i] = lastVal;
+		arr[j] = frontVal;
+	}
+	return arr;
 };
 
 /*
@@ -35,6 +47,4 @@ input string will always have at least one word
 
 */
 
-const reverseSentence = sentence => {
-  
-};
+const reverseSentence = (sentence) => {};
