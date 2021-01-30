@@ -74,7 +74,7 @@ const totalAmount = orders.reduce(sum, order => {
 
 deDupeArray.reduce((accArray, item) => {
   return accArray.includes(item) ? accArray : [...accArray, item]
-}[])
+}, [])
 
 //accArray; 
   //is my acculator and it is set to the inital value of an empty array; it is what I am reducing deDeupeArray to
