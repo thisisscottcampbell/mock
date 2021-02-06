@@ -2,6 +2,9 @@
 //takes no parameters.
 //simply reverses the array
 
-let arr = [1, 2, 3, 4, 5];
+const arr = [1, 2, 3, 4, 5];
 
-arr.reverse()// returns [5, 4, 3, 2, 1]
+const revArr = arr.reverse();
+
+console.log(revArr);
+// returns [5, 4, 3, 2, 1]
