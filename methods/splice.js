@@ -1,6 +1,6 @@
 //The splice() method:
-  //a. changes the original array and
-  //b. returns an array that contains the deleted elements
+//a. changes the original array and
+//b. returns an array that contains the deleted elements
 
 //CAN Take up to three inputs
 //1. Where to delete
@@ -11,28 +11,32 @@
 //will split array at the element
 //and return new array from that element--inclusive
 
+const array = [1, 2, 3, 4, 5, 6];
 
+//const spliceReturnsArrayOfDeletedElements = array.splice(2,2, 'insert me')
 
-const array = [1,2,3,4,5,6]
-
-const spliceReturnsArrayOfDeletedElements = array.splice(2,2, 'insert me')
-
-console.log(spliceReturnsArrayOfDeletedElements);
+//console.log(spliceReturnsArrayOfDeletedElements);
 //[3,4]
-console.log(array)
+//console.log(array)
 //[1,2,'insert me', 5,6]
 
-const arr = [1,2,3,4,5,6]
-const spliced = arr.splice(1,1);
+//const arr = [1,2,3,4,5,6]
+//const spliced = arr.splice(1,1);
 
-console.log(arr);
+//console.log(arr);
 //[1, 3, 4, 5, 6]
-console.log(spliced);
+//console.log(spliced);
 //[2]
 
-const singleArgSplice = arr.splice(2);
+//const singleArgSplice = arr.splice(2);
 
-console.log(arr);
+//console.log(arr);
 //[1, 3]
-console.log(singleArgSplice);
+// console.log(singleArgSplice);
 //[4, 5, 6]
+
+const spliceFirst = array.splice(0, 1);
+
+console.log(spliceFirst);
+
+console.log(array);

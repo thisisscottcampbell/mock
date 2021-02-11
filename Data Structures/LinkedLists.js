@@ -1,154 +1,156 @@
 //Node Class
 class Node {
-    constructor(value, previous, next) {
-        this.value = value,
-        this.previous = previous || null,
-        this.next = next || null
-    }
+	constructor(value, previous, next) {
+		(this.value = value),
+			(this.previous = previous || null),
+			(this.next = next || null);
+	}
 }
 //LinkedList Class
 class LinkedList {
-    constructor() {
-        this.head = null,
-        this.tail = null,
-        this.length = 0
-    }
+	constructor() {
+		(this.head = null), (this.tail = null), (this.length = 0);
+	}
 
-    //push node
-    append(value) {
-        //sanity
-        if (!this.tail) {
-            this.head = this.tail = new Node(value);
-            this.length += 1;
-        }
-        
-        else {
-            const newTail = new Node(value)
-            const prevTail = this.tail;
+	//push node
+	append(value) {
+		//sanity
+		if (!this.tail) {
+			this.head = this.tail = new Node(value);
+			this.length += 1;
+		} else {
+			const newTail = new Node(value);
+			const prevTail = this.tail;
 
-            this.tail = newTail;
-            prevTail.next = newTail;
-            newTail.previous = prevTail;
+			this.tail = newTail;
+			prevTail.next = newTail;
+			newTail.previous = prevTail;
 
-            this.length += 1;
-        }
-    }
+			this.length += 1;
+		}
+	}
 
-    //pop node
-    deleteTail() {
-        if (!this.tail) return null
+	//pop node
+	deleteTail() {
+		if (!this.tail) return null;
 
-        const removeTail = this.tail;
-        const newTail = removeTail.previous;
+		const removeTail = this.tail;
+		const newTail = removeTail.previous;
 
-        if (this.head === this.tail) this.head = this.tail = null;
+		if (this.head === this.tail) this.head = this.tail = null;
+		else {
+			this.tail = newTail;
+			newTail.next = null;
+		}
 
-        else {
-            this.tail = newTail;
-            newTail.next = null;
-        }
-        
-        this.length -= 1;
-        return removeTail.value;
-    }
+		this.length -= 1;
+		return removeTail.value;
+	}
 
-    //shift node
-    deleteHead() {
-        if (!this.head) return null;
+	//shift node
+	deleteHead() {
+		if (!this.head) return null;
 
-        const removeHead = this.head;
-        const newHead = removeHead.next;
+		const removeHead = this.head;
+		const newHead = removeHead.next;
 
-        if (this.head === this.tail) this.head = this.tail = null;
-        else {
-            this.head = newHead;
-            newHead.previous = null
-        }
+		if (this.head === this.tail) this.head = this.tail = null;
+		else {
+			this.head = newHead;
+			newHead.previous = null;
+		}
 
-        this.length -= 1;
-        return removeHead.value;
-    }
+		this.length -= 1;
+		return removeHead.value;
+	}
 
-    //unshift node
-    prepend(value) {
-        //sanity
-        if(!this.head) this.head = this.tail = new Node(value);
+	//unshift node
+	prepend(value) {
+		//sanity
+		if (!this.head) this.head = this.tail = new Node(value);
+		else {
+			const newHead = new Node(value);
+			const prevHead = this.head;
 
-        else {
-            const newHead = new Node(value);
-            const prevHead = this.head;
+			this.head = newHead;
+			prevHead.previous = newHead;
+			newHead.next = prevHead;
+		}
+		this.length += 1;
+	}
 
-            this.head = newHead;
-            prevHead.previous = newHead;
-            newHead.next = prevHead;
-        }
-        this.length += 1;
-    }
+	//find node by value
+	findNode(value) {
+		let currentNode = this.head;
 
-    //find node by value
-    findNode(value) {
-        let currentNode = this.head;
+		while (currentNode) {
+			if (currentNode.value === value) return currentNode;
 
-        while (currentNode) {
-            if (currentNode.value === value) return currentNode;
+			currentNode = currentNode.next;
+		}
+		return null;
+	}
 
-            currentNode = currentNode.next
-        }
-        return null;
-    }
+	//id node at list position
+	traverseList(idx) {
+		if (idx > this.length) return;
+		let counter = 1;
+		let targetNode = this.head;
 
-    //id node at list position
-    traverseList(idx) {
-        if (idx > this.length) return;
-        let counter = 1;
-        let targetNode = this.head;
+		while (counter < idx) {
+			targetNode = targetNode.next;
+			counter += 1;
+		}
+		return targetNode;
+	}
 
-        while (counter < idx) {
-            targetNode = targetNode.next;
-            counter += 1;
-        }
-        return targetNode;
-    }
-    
-    //delete node at position
-    removeNode(idx) {
-        if (idx > this.legnth || idx < 1) return;
-        if (idx === 1) return this.deleteHead();
-        if (idx === this.length) return this.deleteTail();
+	//delete node at position
+	removeNode(idx) {
+		if (idx > this.legnth || idx < 1) return;
+		if (idx === 1) return this.deleteHead();
+		if (idx === this.length) return this.deleteTail();
 
-        const deleteNode = this.traverseList(idx);
-        const nextNode = deleteNode.next;
-        const previousNode = deleteNode.previous;
-        nextNode.previous = previousNode;
-        previousNode.next = nextNode
+		const deleteNode = this.traverseList(idx);
+		const nextNode = deleteNode.next;
+		const previousNode = deleteNode.previous;
+		nextNode.previous = previousNode;
+		previousNode.next = nextNode;
 
-        this.length -=1;
+		this.length -= 1;
 
-        return this;
-    }
+		return this;
+	}
 
-    //add new node at position
-    insertNode(value, idx) {
-        if (idx > this.legnth || idx < 1) return;
-        if (idx === 1) return this.prepend(value);
-        if (idx === this.length) return this.append(value);
+	//add new node at position
+	insertNode(value, idx) {
+		if (idx > this.legnth || idx < 1) return;
+		if (idx === 1) return this.prepend(value);
+		if (idx === this.length) return this.append(value);
 
-        const targetNode = this.traverseList(idx)
-        const newNode = new Node(value);
-        const previousNode = targetNode.previous;
+		const targetNode = this.traverseList(idx);
+		const newNode = new Node(value);
+		const previousNode = targetNode.previous;
 
-        newNode.previous = previousNode;
-        newNode.next = targetNode;
-        targetNode.previous = newNode;
-        previousNode.next = targetNode;
+		newNode.previous = previousNode;
+		newNode.next = targetNode;
+		targetNode.previous = newNode;
+		previousNode.next = newNode;
 
-        this.length += 1;
+		this.length += 1;
 
-        return this;
+		return this;
+	}
 
-    }
-}   
+	insertSorted(value, idx) {
+		const currHead = this.head;
+		const newNode = new Node(value);
 
+		if (!currHead) {
+			this.head = newNode;
+			this.tail = newTail;
+		}
+	}
+}
 
 const list = new LinkedList();
 
