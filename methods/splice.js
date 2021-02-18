@@ -35,8 +35,23 @@ const array = [1, 2, 3, 4, 5, 6];
 // console.log(singleArgSplice);
 //[4, 5, 6]
 
-const spliceFirst = array.splice(0, 1);
+// const spliceFirst = array.splice(0, 1);
 
-console.log(spliceFirst);
+// console.log(spliceFirst);
+// //[1]
 
-console.log(array);
+// console.log(array);
+//[2,3,4,5,6]
+
+
+// const spliceSecond = array.splice(1, 1);
+// console.log(spliceSecond);
+// //[2]
+// console.log(array);
+// //[1,3,4,5,6]
+
+// const spliceFirstTwo = array.splice(0, 2);
+// console.log(spliceFirstTwo);
+//[1,2]
+// console.log(array);
+//[3,4,5,6]
