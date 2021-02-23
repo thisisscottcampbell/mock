@@ -21,3 +21,6 @@
 
 8. option + right 
 //move the cursor to the begining of the emd of the current, or next, string
+
+9. ctrl + left / right
+//scroll between windows
