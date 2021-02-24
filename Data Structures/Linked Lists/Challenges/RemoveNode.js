@@ -1,71 +1,52 @@
-// NOTE: needs to be es5 function definition
 function LinkedList() {
-  this.head = null;
+	this.head = null;
 }
-​
+
 // NOTE: needs to be es5 function definition
 function Node(val) {
-  this.val = val;
-  this.next = null;
+	this.val = val;
+	this.next = null;
 }
-​
+
 const linkedListRemove = (ll, val) => {
-  if (ll.head.val === val) {
-    return ll.head.next;
-  }
-​
-  let current = ll.head;
-  while (current.next) {
-    if (current.next.val === val) {
-      current.next = current.next.next;
-      break;
-    }
-​
-    current = current.next;
-  };
-​
-  return ll;
+	const curr = ll.head;
+	const prev = null;
+	const next = curr.next;
+
+	const remove = (curr, prev, next) => {
+		if (curr.val === val) {
+			curr.next = null;
+			prev.next = next;
+			return curr;
+		}
+
+		return remove(next, curr, next.next);
+	};
+
+	if (curr.val === val) {
+		ll.head = next;
+		return curr;
+	}
+
+	return remove(curr, prev, next);
 };
-​
-/*
-Extension: 
-* Write a function to delete the first instance of a node in a singly linked list with a space complexity of O(1). 
-* Write a function to delete the all instances of a node in a singly linked list.
-​
-Example: 
-Given a linked list:
- 
-('a' -> 'b' -> 'd' -> 'c' -> 'd')
- 
- And given a value, 'd', the evaluated result of calling your function should be:
-​
- ('a' -> 'b' -> 'c')
-​
-*/
-​
-const linkedListRemoveMultiple = (ll, val) => {
-  if (ll.head.val === val) {
-    // if the head is to be deleted,
-    // reassign head to the next node and call linkedListRemoveMultiple again
-    // in case the next node is also to be deleted
-    ll.head = ll.head.next;
-    return linkedListRemoveMultiple(ll, val);
-  }
-​
-  // otherwise nodes to be deleted could be the other nodes in the linked list
-  let curNode = ll.head;
-  let nextNode = curNode.next;
-  while (nextNode) {
-    // Determine whether the next node's value matches the input value
-    if (nextNode.val === val) {
-      // If so: Reassign the pointers to ignore the node matching the target value
-      curNode.next = nextNode.next;
-    } else {
-      // If not: Iterate the two pointers by one node
-      curNode = nextNode;
-    }
-​
-    nextNode = nextNode.next;
-  }
-​
-  return ll;
+
+// const List = new LinkedList();
+// const InitNode = new Node('a');
+
+// InitNode.next = new Node('d');
+// InitNode.next.next = new Node('b');
+// InitNode.next.next.next = new Node('c');
+// InitNode.next.next.next.next = new Node('b');
+
+// List.head = InitNode;
+
+// console.log(linkedListRemove(List, 'a'));
+// console.log(List);
+// //updated list
+// console.log(List.head.val);
+// //'d'
+// console.log(List.head.next.val);
+// //'b'
+// console.log(List.head.next.next.val);
+// //'c'
