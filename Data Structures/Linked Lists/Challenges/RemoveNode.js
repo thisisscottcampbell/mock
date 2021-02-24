@@ -1,3 +1,5 @@
+// Write a function to delete the first instance of a node in a singly linked list.
+
 function LinkedList() {
 	this.head = null;
 }
