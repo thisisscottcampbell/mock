@@ -31,22 +31,22 @@ const linkedListRemove = (ll, val) => {
 	return remove(curr, prev, next);
 };
 
-// const List = new LinkedList();
-// const InitNode = new Node('a');
+const List = new LinkedList();
+const InitNode = new Node('a');
 
-// InitNode.next = new Node('d');
-// InitNode.next.next = new Node('b');
-// InitNode.next.next.next = new Node('c');
-// InitNode.next.next.next.next = new Node('b');
+InitNode.next = new Node('d');
+InitNode.next.next = new Node('b');
+InitNode.next.next.next = new Node('c');
+InitNode.next.next.next.next = new Node('b');
 
-// List.head = InitNode;
+List.head = InitNode;
 
-// console.log(linkedListRemove(List, 'a'));
-// console.log(List);
-// //updated list
-// console.log(List.head.val);
-// //'d'
-// console.log(List.head.next.val);
-// //'b'
-// console.log(List.head.next.next.val);
-// //'c'
+console.log(linkedListRemove(List, 'a'));
+console.log(List);
+//updated list
+console.log(List.head.val);
+//'d'
+console.log(List.head.next.val);
+//'b'
+console.log(List.head.next.next.val);
+//'c'
