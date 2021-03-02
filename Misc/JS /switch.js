@@ -1,5 +1,7 @@
 //The switch statement evaluates an expression, matching the expression's value to a case clause, and executes statements associated with that case, as well as statements in cases that follow the matching case
 
+//We are asking, IF expression === the values in cases, then perform the given code;
+
 switch (expression) {
 	case value1:
 		/* implement the statement(s) to be executed when
