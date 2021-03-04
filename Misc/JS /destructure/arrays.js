@@ -1,6 +1,10 @@
-const colors = ['red', 'green', 'blue'];
+const cats = ['Buddy', 'Truman', 'Scooby'];
 
-const [redColor, greenColor, blueColor] = colors;
+const [firstCat, secondCat, thirdCat];
 
-console.log(redColor, greenColor, blueColor);
-//'red', 'green', 'blue'
+console.log(firstCat);
+//Buddy
+console.log(secondCat);
+//Truman
+console.log(thirdCat);
+//Scooby
