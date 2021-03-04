@@ -21,3 +21,19 @@ console.log(chillJoker);
 const copyVillain = { ...villain };
 console.log(copyVillain);
 // {alias: null, nemesis: null, danger: null}
+
+//REST
+
+const hero = {
+	name: 'Batman',
+	city: 'Gotham',
+	sidekick: 'Robin',
+};
+
+const { sidekick, ...rest } = hero;
+//"rest" can be any label
+
+console.log(sidekick);
+//Robint
+console.log(rest);
+//{ name: Batman, city: Gotham }
