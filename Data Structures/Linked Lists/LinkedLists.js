@@ -19,7 +19,8 @@ class LinkedList {
 	push(value) {
 		const newNode = new Node(value);
 
-		if (!this.head) this.head = this.tail = newNode;
+		//edge: no tail
+		if (!this.tail) this.head = this.tail = newNode;
 		else {
 			const newTail = newNode;
 			const prevTail = this.tail;
