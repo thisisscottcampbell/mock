@@ -6,6 +6,7 @@ class Node {
 			(this.next = next || null);
 	}
 }
+
 //LinkedList Class
 class LinkedList {
 	constructor() {
