@@ -1,34 +1,35 @@
 //Node Class
 class Node {
-	constructor(value, previous, next) {
-		(this.value = value),
-			(this.previous = previous || null),
-			(this.next = next || null);
+	constructor(value) {
+		this.value = value;
+		this.previous = null;
+		this.next = null;
 	}
 }
 
 //LinkedList Class
 class LinkedList {
-	constructor() {
-		(this.head = null), (this.tail = null), (this.length = 0);
+	constructor(value) {
+		const newNode = new Node(value);
+		this.head = newNode;
+		this.tail = this.head;
+		this.length = 1;
 	}
-
 	//push node
-	append(value) {
-		//sanity
-		if (!this.tail) {
-			this.head = this.tail = new Node(value);
-			this.length += 1;
-		} else {
-			const newTail = new Node(value);
+	push(value) {
+		const newNode = new Node(value);
+
+		if (!this.head) this.head = this.tail = newNode;
+		else {
+			const newTail = newNode;
 			const prevTail = this.tail;
 
-			this.tail = newTail;
+			newNode.previous = prevTail;
 			prevTail.next = newTail;
-			newTail.previous = prevTail;
-
-			this.length += 1;
+			this.tail = newTail;
 		}
+		this.length += 1;
+		return this;
 	}
 
 	//pop node
@@ -126,7 +127,7 @@ class LinkedList {
 	insertNode(value, idx) {
 		if (idx > this.legnth || idx < 1) return;
 		if (idx === 1) return this.prepend(value);
-		if (idx === this.length) return this.append(value);
+		if (idx === this.length) return this.push(value);
 
 		const targetNode = this.traverseList(idx);
 		const newNode = new Node(value);
@@ -153,19 +154,18 @@ class LinkedList {
 	}
 }
 
-const list = new LinkedList();
+const list = new LinkedList(1);
 
-list.append(1);
-list.append(2);
-list.append(3);
+list.push(2);
+//list.push(3);
 // list.prepend(69);
 // list.deleteHead();
 // list.deleteTail();
 // const find2 = list.findNode(2);
 // console.log(find2)
-// list.append(6);
-// list.append(7);
-// list.append(8);
+// list.push(6);
+// list.push(7);
+// list.push(8);
 // list.removeNode(3)
 // list.removeNode(3)
 // list.insertNode('INSERT ME', 3)
