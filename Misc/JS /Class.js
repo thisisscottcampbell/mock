@@ -29,3 +29,4 @@ console.log(Felix.getName());
 Felix.setName('Sylvester');
 
 console.log(Felix.getName());
+//Sylvester
