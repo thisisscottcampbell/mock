@@ -2,7 +2,6 @@
 class Node {
 	constructor(value) {
 		this.value = value;
-		this.previous = null;
 		this.next = null;
 	}
 }
@@ -18,36 +17,34 @@ class LinkedList {
 	//push node
 	push(value) {
 		const newNode = new Node(value);
-
 		//edge: no tail
-		if (!this.tail) this.head = this.tail = newNode;
+		if (!this.head) this.head = this.tail = newNode;
 		else {
-			const newTail = newNode;
-			const prevTail = this.tail;
-
-			newNode.previous = prevTail;
-			prevTail.next = newTail;
-			this.tail = newTail;
+			this.tail.next = newNode;
+			this.tail = newNode;
 		}
 		this.length += 1;
 		return this;
 	}
 
 	//pop node
-	deleteTail() {
-		if (!this.tail) return null;
+	pop() {
+		if (!this.head) return undefined;
 
-		const removeTail = this.tail;
-		const newTail = removeTail.previous;
+		let temp = this.head;
+		let prev = this.head;
 
-		if (this.head === this.tail) this.head = this.tail = null;
-		else {
-			this.tail = newTail;
-			newTail.next = null;
+		while (temp.next) {
+			prev = temp;
+			temp = temp.next;
 		}
-
-		this.length -= 1;
-		return removeTail.value;
+		this.tail = prev;
+		this.tail.next = null;
+		this.length--;
+		if (this.length === 0) {
+			this.head = this.tail = null;
+		}
+		return temp;
 	}
 
 	//shift node
