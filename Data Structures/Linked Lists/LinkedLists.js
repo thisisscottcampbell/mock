@@ -12,16 +12,15 @@ class LinkedList {
 		const newNode = new Node(value);
 		this.head = newNode;
 		this.tail = this.head;
-		this.length = 1;
+		value ? (this.length = 1) : (this.length = 0);
 	}
 	//append node to list
 	push(value) {
 		const newNode = new Node(value);
 
 		//edge
-		if (!this.head.value) {
+		if (!this.head || !this.head.value) {
 			this.head = this.tail = newNode;
-			return this;
 		} else {
 			//congifure newNode to be the new tail
 
@@ -29,7 +28,7 @@ class LinkedList {
 			this.tail = newNode;
 		}
 
-		this.length += 1;
+		this.length++;
 
 		return this;
 	}
@@ -38,6 +37,13 @@ class LinkedList {
 	pop() {
 		//edge
 		if (!this.tail.value) return undefined;
+
+		//edge
+		if (this.length === 1) {
+			this.head = this.tail = null;
+			this.length--;
+			return this;
+		}
 
 		//set pointers
 		let prevNode;
@@ -52,14 +58,10 @@ class LinkedList {
 
 		//reconfigure tail of List to point to prev
 		this.tail = prevNode;
-		this.tail.next = null;
+		prevNode.next = null;
 		this.length--;
 
-		//edge
-		if (this.length === 0) {
-			this.head = this.tail = null;
-		}
-		return temp;
+		return prevNode;
 	}
 
 	//prepend node
@@ -67,9 +69,8 @@ class LinkedList {
 		const newNode = new Node(value);
 
 		//edge
-		if (!this.head.value) {
+		if (!this.head || !this.head.value) {
 			this.head = this.tail = newNode;
-			return this;
 		} else {
 			//configure newNode to be the head of the List
 			newNode.next = this.head;
@@ -84,27 +85,26 @@ class LinkedList {
 	//delete first node (i.e., delete head node — reassign head node)
 	shift() {
 		//edge
-		if (!this.head) return undefined;
+		if (!this.head) return this;
 		//edge
-		if (this.head === this.tail) this.head = this.tail = null;
+		if (this.length === 1) {
+			this.head = this.tail = null;
+			this.length--;
+			return this;
+		}
+		//edge
 		else {
 			//recongifure head of List
 
-			const prevHead = this.head;
-			const newHead = prevHead.next;
+			let prevHead = this.head;
+			let newHead = prevHead.next;
 			prevHead.next = null;
 			this.head = newHead;
+
+			this.length -= 1;
+
+			return prevHead;
 		}
-
-		this.length -= 1;
-
-		//edge
-		if (this.length === 1) {
-			this.tail = this.head;
-			this.tail.next = null;
-		}
-
-		return prevHead;
 	}
 
 	//find node by value
@@ -183,10 +183,15 @@ class LinkedList {
 const list = new LinkedList();
 
 //list.push(2);
-// list.push(3);
-//list.unshift('prepend');
+//list.push(3);
+list.unshift('prepend');
+list.unshift('this should be first');
+list.shift();
+list.shift();
+//list.shift();
 // list.push('append');
 //list.pop();
+//list.push(3);
 // list.deleteTail();
 // const find2 = list.findNode(2);
 // console.log(find2)
