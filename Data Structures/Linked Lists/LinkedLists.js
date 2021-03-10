@@ -182,17 +182,14 @@ class LinkedList {
 
 const list = new LinkedList();
 
-//list.push(2);
-//list.push(3);
+list.push(2);
+list.push(3);
+list.pop();
 list.unshift('prepend');
-list.unshift('this should be first');
-list.shift();
-list.shift();
-//list.shift();
-// list.push('append');
+list.push('append');
 //list.pop();
 //list.push(3);
-// list.deleteTail();
+// list.shift();
 // const find2 = list.findNode(2);
 // console.log(find2)
 // list.push(6);
