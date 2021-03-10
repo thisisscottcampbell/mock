@@ -14,69 +14,92 @@ class LinkedList {
 		this.tail = this.head;
 		this.length = 1;
 	}
-	//push node
+	//append node to list
 	push(value) {
 		const newNode = new Node(value);
-		//edge: no tail
+
+		//edge
 		if (!this.head) this.head = this.tail = newNode;
 		else {
+			//congifure newNode to be the new tail
+
 			this.tail.next = newNode;
 			this.tail = newNode;
 		}
+
 		this.length += 1;
+
 		return this;
 	}
 
-	//pop node
+	//delete last node (i.e., delete tail node — reassign tail node)
 	pop() {
+		//edge
 		if (!this.head) return undefined;
 
+		//set pointers
 		let temp = this.head;
 		let prev = this.head;
 
+		//iterate until pointers point to desired nodes
 		while (temp.next) {
 			prev = temp;
 			temp = temp.next;
 		}
+
+		//reconfigure tail of List to point to prev
 		this.tail = prev;
 		this.tail.next = null;
 		this.length--;
+
+		//edge
 		if (this.length === 0) {
 			this.head = this.tail = null;
 		}
 		return temp;
 	}
 
-	//shift node
-	deleteHead() {
-		if (!this.head) return null;
-
-		const removeHead = this.head;
-		const newHead = removeHead.next;
-
+	//delete first node (i.e., delete head node — reassign head node)
+	shift() {
+		//edge
+		if (!this.head) return undefined;
+		//edge
 		if (this.head === this.tail) this.head = this.tail = null;
 		else {
+			//recongifure head of List
+
+			const prevHead = this.head;
+			const newHead = prevHead.next;
+			prevHead.next = null;
 			this.head = newHead;
-			newHead.previous = null;
 		}
 
 		this.length -= 1;
-		return removeHead.value;
+
+		//edge
+		if (this.length === 1) {
+			this.tail = this.head;
+			this.tail.next = null;
+		}
+
+		return prevHead;
 	}
 
-	//unshift node
-	prepend(value) {
-		//sanity
-		if (!this.head) this.head = this.tail = new Node(value);
-		else {
-			const newHead = new Node(value);
-			const prevHead = this.head;
+	//prepend node
+	unshift(value) {
+		const newNode = new Node(value);
 
-			this.head = newHead;
-			prevHead.previous = newHead;
-			newHead.next = prevHead;
+		//edge
+		if (!this.head) this.head = this.tail = newNode;
+		else {
+			//configure newNode to be the head of the List
+			newNode.next = this.head;
+			this.head = newNode;
 		}
+
 		this.length += 1;
+
+		return this;
 	}
 
 	//find node by value
