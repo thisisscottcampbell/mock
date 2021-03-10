@@ -178,9 +178,10 @@ class LinkedList {
 const list = new LinkedList(1);
 
 list.push(2);
-//list.push(3);
-// list.prepend(69);
-// list.deleteHead();
+list.push(3);
+list.unshift('prepend');
+list.push('append');
+//list.pop();
 // list.deleteTail();
 // const find2 = list.findNode(2);
 // console.log(find2)
