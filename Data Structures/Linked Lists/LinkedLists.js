@@ -19,8 +19,10 @@ class LinkedList {
 		const newNode = new Node(value);
 
 		//edge
-		if (!this.head.value) this.head = this.tail = newNode;
-		else {
+		if (!this.head.value) {
+			this.head = this.tail = newNode;
+			return this;
+		} else {
 			//congifure newNode to be the new tail
 
 			this.tail.next = newNode;
@@ -35,20 +37,21 @@ class LinkedList {
 	//delete last node (i.e., delete tail node — reassign tail node)
 	pop() {
 		//edge
-		if (!this.head) return undefined;
+		if (!this.tail.value) return undefined;
 
 		//set pointers
-		let temp = this.head;
-		let prev = this.head;
+		let prevNode;
+		let currNode = this.head;
+		let nextNode = currNode.next;
 
 		//iterate until pointers point to desired nodes
-		while (temp.next) {
-			prev = temp;
-			temp = temp.next;
+		while (currNode.next) {
+			prevNode = currNode;
+			currNode = nextNode;
 		}
 
 		//reconfigure tail of List to point to prev
-		this.tail = prev;
+		this.tail = prevNode;
 		this.tail.next = null;
 		this.length--;
 
@@ -57,6 +60,25 @@ class LinkedList {
 			this.head = this.tail = null;
 		}
 		return temp;
+	}
+
+	//prepend node
+	unshift(value) {
+		const newNode = new Node(value);
+
+		//edge
+		if (!this.head.value) {
+			this.head = this.tail = newNode;
+			return this;
+		} else {
+			//configure newNode to be the head of the List
+			newNode.next = this.head;
+			this.head = newNode;
+		}
+
+		this.length += 1;
+
+		return this;
 	}
 
 	//delete first node (i.e., delete head node — reassign head node)
@@ -83,23 +105,6 @@ class LinkedList {
 		}
 
 		return prevHead;
-	}
-
-	//prepend node
-	unshift(value) {
-		const newNode = new Node(value);
-
-		//edge
-		if (!this.head) this.head = this.tail = newNode;
-		else {
-			//configure newNode to be the head of the List
-			newNode.next = this.head;
-			this.head = newNode;
-		}
-
-		this.length += 1;
-
-		return this;
 	}
 
 	//find node by value
@@ -177,9 +182,9 @@ class LinkedList {
 
 const list = new LinkedList();
 
-list.push(2);
+//list.push(2);
 // list.push(3);
-// list.unshift('prepend');
+//list.unshift('prepend');
 // list.push('append');
 //list.pop();
 // list.deleteTail();
