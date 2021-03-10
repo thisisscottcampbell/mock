@@ -19,7 +19,7 @@ class LinkedList {
 		const newNode = new Node(value);
 
 		//edge
-		if (!this.head) this.head = this.tail = newNode;
+		if (!this.head.value) this.head = this.tail = newNode;
 		else {
 			//congifure newNode to be the new tail
 
@@ -175,12 +175,12 @@ class LinkedList {
 	}
 }
 
-const list = new LinkedList(1);
+const list = new LinkedList();
 
 list.push(2);
-list.push(3);
-list.unshift('prepend');
-list.push('append');
+// list.push(3);
+// list.unshift('prepend');
+// list.push('append');
 //list.pop();
 // list.deleteTail();
 // const find2 = list.findNode(2);
