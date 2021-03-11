@@ -149,6 +149,16 @@ class LinkedList {
 		return this;
 	}
 
+	//edit existing node
+	updateNode(value, idx) {
+		if (idx > this.length || idx < 1) return;
+
+		const targetNode = this.getNodeIdx(idx);
+		targetNode.value = value;
+
+		return targetNode;
+	}
+
 	//add new node at position
 	insertNode(value, idx) {
 		if (idx > this.legnth || idx < 1) return;
