@@ -108,7 +108,7 @@ class LinkedList {
 	}
 
 	//find node by value
-	findNode(value) {
+	getValue(value) {
 		let currentNode = this.head;
 
 		while (currentNode) {
@@ -119,9 +119,9 @@ class LinkedList {
 		return null;
 	}
 
-	//id node at list position
-	traverseList(idx) {
-		if (idx > this.length) return;
+	//get node at list position
+	getIdx(idx) {
+		if (idx < 0 || idx > this.length) return undefined;
 		let counter = 1;
 		let targetNode = this.head;
 
@@ -184,9 +184,10 @@ const list = new LinkedList();
 
 list.push(2);
 list.push(3);
-list.pop();
-list.unshift('prepend');
-list.push('append');
+// list.pop();
+// list.unshift('prepend');
+// list.push('append');
+
 //list.pop();
 //list.push(3);
 // list.shift();
