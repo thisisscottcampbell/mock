@@ -153,17 +153,10 @@ class LinkedList {
 	insertNode(value, idx) {
 		if (idx > this.legnth || idx < 1) return;
 		if (idx === 1) return this.unshift(value);
-		if (idx === this.length) return this.push(value);
 
 		const newNode = new Node(value);
 		const targetNode = this.getNodeIdx(idx);
-		let prevNode = this.head;
-		let curr = this.head;
-
-		while (curr.next !== targetNode) {
-			prevNode = curr;
-			curr = curr.next;
-		}
+		const prevNode = this.getNodeIdx(idx - 1);
 
 		newNode.next = targetNode;
 		prevNode.next = newNode;
