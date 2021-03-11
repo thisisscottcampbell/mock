@@ -108,7 +108,7 @@ class LinkedList {
 	}
 
 	//find node by value
-	getValue(value) {
+	getNodeValue(value) {
 		let currentNode = this.head;
 
 		while (currentNode) {
@@ -116,12 +116,12 @@ class LinkedList {
 
 			currentNode = currentNode.next;
 		}
-		return null;
+		return;
 	}
 
 	//get node at list position
-	getIdx(idx) {
-		if (idx < 0 || idx > this.length) return undefined;
+	getNodeIdx(idx) {
+		if (idx < 0 || idx > this.length) return;
 		let counter = 1;
 		let targetNode = this.head;
 
@@ -152,22 +152,28 @@ class LinkedList {
 	//add new node at position
 	insertNode(value, idx) {
 		if (idx > this.legnth || idx < 1) return;
-		if (idx === 1) return this.prepend(value);
+		if (idx === 1) return this.unshift(value);
 		if (idx === this.length) return this.push(value);
 
-		const targetNode = this.traverseList(idx);
 		const newNode = new Node(value);
-		const previousNode = targetNode.previous;
+		const targetNode = this.getNodeIdx(idx);
+		let prevNode = this.head;
+		let curr = this.head;
 
-		newNode.previous = previousNode;
+		while (curr.next !== targetNode) {
+			prevNode = curr;
+			curr = curr.next;
+		}
+
 		newNode.next = targetNode;
-		targetNode.previous = newNode;
-		previousNode.next = newNode;
+		prevNode.next = newNode;
 
 		this.length += 1;
 
 		return this;
 	}
+
+	updateNode(value, idx) {}
 
 	insertSorted(value, idx) {
 		const currHead = this.head;
@@ -180,10 +186,10 @@ class LinkedList {
 	}
 }
 
-const list = new LinkedList();
+const list = new LinkedList(1);
 
 list.push(2);
-list.push(3);
+//list.push(3);
 // list.pop();
 // list.unshift('prepend');
 // list.push('append');
@@ -198,5 +204,5 @@ list.push(3);
 // list.push(8);
 // list.removeNode(3)
 // list.removeNode(3)
-// list.insertNode('INSERT ME', 3)
-console.log(list);
+console.log(list.insertNode('INSERT ME', 2));
+//console.log(list);
