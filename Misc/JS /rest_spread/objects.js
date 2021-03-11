@@ -58,3 +58,13 @@ const IronMan = { name: 'Tony Stark', alias: 'Iron Man' };
 const newHeroes = { ...heroes, 4: IronMan };
 
 console.log(newHeroes);
+
+//WITH KEY INTERPOLATION
+
+const randomKey = Math.floor(Math.random() * 100);
+
+const CaptainAmerica = { name: 'Steve Rogers', alias: 'Captain America' };
+
+const newestHeroes = { ...newHeroes, [randomKey]: CaptainAmerica };
+
+console.log(newestHeroes);
