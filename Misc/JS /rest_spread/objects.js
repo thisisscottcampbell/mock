@@ -37,3 +37,24 @@ console.log(sidekick);
 //Robint
 console.log(rest);
 //{ name: Batman, city: Gotham }
+
+const heroes = {
+	1: {
+		name: 'Bruce Wayne',
+		alias: 'Batman',
+	},
+	2: {
+		name: 'Clack Kent',
+		alias: 'Superman',
+	},
+	3: {
+		name: 'Peter Parker',
+		alias: 'Spiderman',
+	},
+};
+
+const IronMan = { name: 'Tony Stark', alias: 'Iron Man' };
+
+const newHeroes = { ...heroes, 4: IronMan };
+
+console.log(newHeroes);
