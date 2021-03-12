@@ -149,16 +149,6 @@ class LinkedList {
 		return this;
 	}
 
-	//edit existing node
-	updateNode(value, idx) {
-		if (idx > this.length || idx < 1) return;
-
-		const targetNode = this.getNodeIdx(idx);
-		targetNode.value = value;
-
-		return targetNode;
-	}
-
 	//add new node at position
 	insertNode(value, idx) {
 		if (idx > this.legnth || idx < 1) return;
@@ -176,7 +166,16 @@ class LinkedList {
 		return this;
 	}
 
-	updateNode(value, idx) {}
+	//edit existing node
+	updateNode(value, idx) {
+		if (idx < 1 || idx > this.length) return;
+
+		const targetNode = this.getNodeIdx(idx);
+
+		targetNode.value = value;
+
+		return this;
+	}
 
 	insertSorted(value, idx) {
 		const currHead = this.head;
@@ -192,20 +191,22 @@ class LinkedList {
 const list = new LinkedList(1);
 
 list.push(2);
-//list.push(3);
+list.push(3);
 // list.pop();
 // list.unshift('prepend');
 // list.push('append');
-
 //list.pop();
 //list.push(3);
 // list.shift();
-// const find2 = list.findNode(2);
-// console.log(find2)
+// const getIdx3 = list.getNodeIdx(3);
+// console.log(getIdx3);
+// const getValue2 = list.getNodeValue(2);
+// console.log(getValue2);
 // list.push(6);
 // list.push(7);
 // list.push(8);
 // list.removeNode(3)
 // list.removeNode(3)
-console.log(list.insertNode('INSERT ME', 2));
-//console.log(list);
+//console.log(list.insertNode('INSERT ME', 2));
+//list.updateNode('UPDATE ME', 1);
+console.log(list);
