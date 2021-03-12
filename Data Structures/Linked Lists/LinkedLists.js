@@ -36,7 +36,7 @@ class LinkedList {
 	//delete last node (i.e., delete tail node — reassign tail node)
 	pop() {
 		//edge
-		if (!this.tail.value) return undefined;
+		if (this.length < 1) return;
 
 		//edge
 		if (this.length === 1) {
@@ -48,20 +48,20 @@ class LinkedList {
 		//set pointers
 		let prevNode;
 		let currNode = this.head;
-		let nextNode = currNode.next;
 
 		//iterate until pointers point to desired nodes
 		while (currNode.next) {
 			prevNode = currNode;
-			currNode = nextNode;
+			currNode = currNode.next;
 		}
 
 		//reconfigure tail of List to point to prev
-		this.tail = prevNode;
+		currNode.next = null;
 		prevNode.next = null;
+		this.tail = prevNode;
 		this.length--;
 
-		return prevNode;
+		return this;
 	}
 
 	//prepend node
@@ -134,19 +134,19 @@ class LinkedList {
 
 	//delete node at position
 	removeNode(idx) {
-		if (idx > this.legnth || idx < 1) return;
-		if (idx === 1) return this.deleteHead();
-		if (idx === this.length) return this.deleteTail();
+		if (idx < 1 || idx > this.length) return;
+		if (idx === 1) return this.shift();
+		if (idx === this.length) return this.pop();
 
-		const deleteNode = this.traverseList(idx);
-		const nextNode = deleteNode.next;
-		const previousNode = deleteNode.previous;
-		nextNode.previous = previousNode;
-		previousNode.next = nextNode;
+		const targetNode = this.getNodeIdx(idx);
+		const prevNode = this.getNodeIdx(idx - 1);
 
-		this.length -= 1;
+		prevNode.next = targetNode.next;
+		targetNode.next = null;
 
-		return this;
+		this.list--;
+
+		return targetNode;
 	}
 
 	//add new node at position
@@ -192,7 +192,6 @@ const list = new LinkedList(1);
 
 list.push(2);
 list.push(3);
-// list.pop();
 // list.unshift('prepend');
 // list.push('append');
 //list.pop();
@@ -205,7 +204,8 @@ list.push(3);
 // list.push(6);
 // list.push(7);
 // list.push(8);
-// list.removeNode(3)
+//console.log(list);
+//list.removeNode(1);
 // list.removeNode(3)
 //console.log(list.insertNode('INSERT ME', 2));
 //list.updateNode('UPDATE ME', 1);
