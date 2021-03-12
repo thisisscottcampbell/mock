@@ -186,6 +186,19 @@ class LinkedList {
 			this.tail = newTail;
 		}
 	}
+	reverseList() {
+		if (this.length < 1) return;
+		if (this.length === 1) return this;
+
+		let count = 2;
+		let curr = this.head.next;
+		const prevHead = this.head;
+		const prevTail = this.tail;
+
+		while (count <= this.length - 1) {
+			this.head = this.tail;
+		}
+	}
 }
 
 const list = new LinkedList(1);
