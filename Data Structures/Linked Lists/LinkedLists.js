@@ -187,6 +187,7 @@ class LinkedList {
 		}
 	}
 
+	//reverse pointers to reverse order of nodes
 	reverseList() {
 		if (this.length < 1) return;
 		if (this.length === 1) return this;
