@@ -186,18 +186,26 @@ class LinkedList {
 			this.tail = newTail;
 		}
 	}
+
 	reverseList() {
 		if (this.length < 1) return;
 		if (this.length === 1) return this;
 
-		let count = 2;
-		let curr = this.head.next;
-		const prevHead = this.head;
-		const prevTail = this.tail;
+		let curr = this.head;
 
-		while (count <= this.length - 1) {
-			this.head = this.tail;
+		this.head = this.tail;
+		this.tail = curr;
+
+		let next = curr.next;
+		let prev = null;
+
+		for (let i = 1; i <= this.length; i++) {
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
 		}
+		return this;
 	}
 }
 
@@ -222,4 +230,6 @@ list.push(3);
 // list.removeNode(3)
 //console.log(list.insertNode('INSERT ME', 2));
 //list.updateNode('UPDATE ME', 1);
+console.log(list);
+list.reverseList();
 console.log(list);
