@@ -72,4 +72,6 @@ tree.insert(34);
 tree.insert(11);
 tree.insert(4);
 tree.insert(14);
+console.log(tree.contains(14));
+console.log(tree.contains(69));
 console.log(tree);
