@@ -68,6 +68,24 @@ class BST {
 		//no found, return false
 		return false;
 	}
+
+	getHeight() {
+		if (!this.root) return null;
+
+		const handleHeight = (root, height = 1) => {
+			if (!root.right && !root.left) return height;
+
+			if (root.right & root.left)
+				return Math.max(
+					handleHeight(root.right, ++height),
+					handleHeight(root.left, ++height)
+				);
+			else if (root.right) return handleHeight(root.right, ++height);
+			else return handleHeight(root.left, ++height);
+		};
+
+		return handleHeight(this.root);
+	}
 }
 
 const tree = new BST();
@@ -78,6 +96,8 @@ tree.insert(34);
 tree.insert(11);
 tree.insert(4);
 tree.insert(14);
-console.log(tree.contains(14));
-console.log(tree.contains(69));
+//console.log(tree.contains(14));
+//console.log(tree.contains(69));
+const height = tree.getHeight();
+console.log(height);
 console.log(tree);
