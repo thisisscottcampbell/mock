@@ -50,14 +50,26 @@ class BST {
 			}
 		}
 	}
+	contains(value) {
+		if (this.root === null) return false;
+
+		let temp = this.root;
+
+		while (temp) {
+			if (value < temp.value) temp = temp.left;
+			else if (value > temp.value) temp = temp.right;
+			else return true;
+		}
+		return false;
+	}
 }
 
 const tree = new BST();
 tree.insert(13);
-tree.insert(14);
+tree.insert(23);
 tree.insert(5);
-// tree.insert(34);
-// tree.insert(11);
-// tree.insert(4);
-// tree.insert(23);
+tree.insert(34);
+tree.insert(11);
+tree.insert(4);
+tree.insert(14);
 console.log(tree);
