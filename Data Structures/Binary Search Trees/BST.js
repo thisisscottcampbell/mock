@@ -51,15 +51,21 @@ class BST {
 		}
 	}
 	contains(value) {
+		//if there is no root;
 		if (this.root === null) return false;
 
+		//declare comp node
 		let temp = this.root;
 
 		while (temp) {
+			//if the val is less than temp val, re-point temp to L and continue traversal to compare
 			if (value < temp.value) temp = temp.left;
+			//if the val is greater than temp val, re-point temp to R and continue traversal to compare
 			else if (value > temp.value) temp = temp.right;
+			//if it is neither > or < , then it is equal, and the tree contains value ... return true;
 			else return true;
 		}
+		//no found, return false
 		return false;
 	}
 }
