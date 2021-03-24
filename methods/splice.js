@@ -43,7 +43,6 @@ const array = [1, 2, 3, 4, 5, 6];
 // console.log(array);
 //[2,3,4,5,6]
 
-
 // const spliceSecond = array.splice(1, 1);
 // console.log(spliceSecond);
 // //[2]
@@ -55,3 +54,16 @@ const array = [1, 2, 3, 4, 5, 6];
 //[1,2]
 // console.log(array);
 //[3,4,5,6]
+
+//***TO SPLICE ANY SINGLE ELEMENT***
+
+//Array.splice(theIdxOfEl, 1);
+
+//const demo = [1,2,3,4,5,6,7,8];
+//demo.splice(7, 1);
+//console.log(demo)
+//[1,2,3,4,5,6,7]
+
+//demo.splice(3, 1);
+//console.log(demo);
+// /[1,2,3,5,6,7]
