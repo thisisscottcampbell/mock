@@ -1,6 +1,6 @@
 // write a function "arrDimensions" that takes a (nested) array and returns the number of nesting levels in that array
 
-const arrDimensions = (arr, depth = 1) => {
+const arrDimensions = (arr, depth = 1, level = 0) => {
 	const curr = arr[0];
 
 	if (!curr) return depth;
@@ -9,7 +9,11 @@ const arrDimensions = (arr, depth = 1) => {
 		for (let i = 0; i < arr.length; i++) {
 			const curr = arr[i];
 
-			Array.isArray(curr) && arrDimensions(curr);
+			if (Array.isArray(curr)) {
+				level += 1;
+				depth += 1;
+				processCurr(curr);
+			}
 		}
 	};
 
@@ -20,7 +24,7 @@ const arrDimensions = (arr, depth = 1) => {
 	}
 
 	if (Array.isArray(curr)) {
-		depth += 1;
+		if (depth - 1 === level) (depth += 1), (level += 1);
 
 		processCurr(curr);
 
@@ -28,13 +32,12 @@ const arrDimensions = (arr, depth = 1) => {
 
 		return arrDimensions(arr, depth);
 	}
-
-	arrDimensions(arr, 1);
 };
 
+console.log('expect: 1, 2, 2, 5');
 console.log(arrDimensions([2, 5, 1]));
 //-> 1
-// arrDimensions( [2, [5], 1] );
+console.log(arrDimensions([2, [5], 1]));
 //-> 2
 console.log(arrDimensions([2, [5], [3]]));
 //-> 2
