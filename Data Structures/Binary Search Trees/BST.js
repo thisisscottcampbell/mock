@@ -15,40 +15,27 @@ class BST {
 	insert(value) {
 		const newNode = new Node(value);
 
-		//if BST is empty, insert at root and return
-		if (this.root === null) {
+		//if there is no root;
+		if (!this.root) {
 			this.root = newNode;
-			return this;
+			return;
 		}
 
-		//init temp node at root to begin comparing as we traverse;
-		let temp = this.root;
-
-		//traverse untill we explcitly return;
-		while (true) {
-			//if we have a duplicate value, return
-			if (newNode.value === temp.value) return undefined;
-			//if the new val less than temp val?
-			if (newNode.value < temp.value) {
-				//if left spot is open, insert and return;
-				if (temp.left === null) {
-					temp.left = newNode;
-					return this;
-				}
-				//if not, update temp and continue traversing...
-				temp = temp.left;
-			} else {
-				//the val is greater than in this case
-				//if right is empty
-				if (temp.right === null) {
-					//insert and return.
-					temp.right = newNode;
-					return this;
-				}
-				//update temp and continue traverse
-				temp = temp.right;
+		const traverse = (node) => {
+			//if value is less than
+			if (value < node.value) {
+				if (node.left) traverse(node.left);
+				else node.left = newNode;
 			}
-		}
+
+			//if value is greater than
+			if (value > node.value) {
+				if (node.right) traverse(node.right);
+				else node.right = newNode;
+			}
+		};
+
+		traverse(this.root);
 	}
 	contains(value) {
 		//if there is no root;
@@ -68,7 +55,6 @@ class BST {
 		//no found, return false
 		return false;
 	}
-
 	getHeight() {
 		if (!this.root) return null;
 
@@ -86,18 +72,105 @@ class BST {
 
 		return handleHeight(this.root);
 	}
+	getMin() {
+		let curr = this.root;
+		while (curr.left) {
+			curr = curr.left;
+		}
+		return curr.value;
+	}
+	getMax() {
+		let curr = this.root;
+		while (curr.right) {
+			curr = curr.right;
+		}
+		return curr.value;
+	}
+	DFSinOrder() {
+		//returm values lowest to highest
+		const result = [];
+
+		const traverse = (node) => {
+			if (node.left) traverse(node.left);
+			result.push(node.value);
+			if (node.right) traverse(node.right);
+		};
+
+		traverse(this.root);
+		return result;
+	}
+	DFSpreOrder() {
+		//process left side of tree first
+
+		const result = [];
+
+		const traverse = (node) => {
+			result.push(node.value);
+
+			if (node.left) traverse(node.left);
+
+			if (node.right) traverse(node.right);
+		};
+
+		traverse(this.root);
+		return result;
+	}
+	DFSpostOrder() {
+		//process  right side first
+
+		const result = [];
+
+		const traverse = (node) => {
+			if (node.left) traverse(node.left);
+
+			if (node.right) traverse(node.right);
+
+			result.push(node.value);
+		};
+
+		traverse(this.root);
+		return result;
+	}
+	BFS() {
+		const result = [];
+		const queue = [];
+
+		queue.push(this.root);
+
+		while (queue.length) {
+			const curr = queue.shift();
+
+			result.push(curr.value);
+
+			if (curr.left) queue.push(curr.left);
+
+			if (curr.right) queue.push(curr.right);
+		}
+
+		return result;
+	}
 }
 
 const tree = new BST();
-tree.insert(13);
-tree.insert(23);
-tree.insert(5);
-tree.insert(34);
-tree.insert(11);
-tree.insert(4);
-tree.insert(14);
-//console.log(tree.contains(14));
-//console.log(tree.contains(69));
-const height = tree.getHeight();
-console.log(height);
+tree.insert(15);
+tree.insert(3);
+tree.insert(36);
+tree.insert(2);
+tree.insert(12);
+tree.insert(28);
+tree.insert(39);
+// console.log(tree.contains(2));
+// console.log(tree.contains(69));
+// const height = tree.getHeight();
+// console.log(height);
 console.log(tree);
+// console.log(tree.getMax());
+// console.log(tree.getMin());
+console.log('in order', tree.DFSinOrder());
+//2, 3, 13, 15, 28, 36, 39
+console.log('preorder', tree.DFSpreOrder());
+//15, 2, 3, 12, 36, 28, 39
+console.log('post order', tree.DFSpostOrder());
+//2, 12, 3, 28, 39, 36, 15
+console.log('bfs', tree.BFS());
+//15, 3, 36, 2, 12, 28, 39
