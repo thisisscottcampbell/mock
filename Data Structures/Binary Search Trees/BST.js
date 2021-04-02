@@ -167,7 +167,7 @@ console.log(tree);
 // console.log(tree.getMax());
 // console.log(tree.getMin());
 console.log('in order', tree.DFSinOrder());
-//2, 3, 13, 15, 28, 36, 39
+//2, 3, 12, 15, 28, 36, 39
 console.log('preorder', tree.DFSpreOrder());
 //15, 2, 3, 12, 36, 28, 39
 console.log('post order', tree.DFSpostOrder());
