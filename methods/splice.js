@@ -57,7 +57,7 @@ const array = [1, 2, 3, 4, 5, 6];
 
 //***TO SPLICE ANY SINGLE ELEMENT***
 
-//Array.splice(theIdxOfEl, 1);
+//Array.splice(atTheIdxOfEl, removeThisMany);
 
 //const demo = [1,2,3,4,5,6,7,8];
 //demo.splice(7, 1);
