@@ -67,3 +67,6 @@ const array = [1, 2, 3, 4, 5, 6];
 //demo.splice(3, 1);
 //console.log(demo);
 // /[1,2,3,5,6,7]
+
+//SPLICE THE LAST
+//demo.splice(demo.length - 1);
