@@ -1,6 +1,6 @@
 const cats = ['Buddy', 'Truman', 'Scooby'];
 
-const [firstCat, secondCat, thirdCat];
+const [firstCat, secondCat, thirdCat] = cats;
 
 console.log(firstCat);
 //Buddy
