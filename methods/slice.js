@@ -7,34 +7,30 @@
 //whereToStateSlice is inclusive (i.e., will be included in operation)
 //whereToEndSlice is exclusive (i.e., it will not be included in the operation...the slice will end on the index preceding the whereToEndSlice[i] )
 
-const cats = ["Felix", "Garfield", "Tigger", "Sylvester", "Cheshire Cat"]
+const cats = ['Felix', 'Garfield', 'Tigger', 'Sylvester', 'Cheshire Cat'];
 
-cats.slice(2)
+cats.slice(2);
 //returns ["Tigger", "Sylvester", "Cheshire Cat"]
 
-cats.slice(0, 2)
-//returns ["Felix", "Garfield"] 
+cats.slice(0, 2);
+//returns ["Felix", "Garfield"]
 
-cats.slice(0,1)
+//SLICE FIRST EL
+cats.slice(0, 1);
 //returns ["Felix"]
 
-cats.slice(-1)
+cats.slice(-1);
 //return ["Cheshire Cat"]
 
 function useSlice(array, startIncluded, endExcluded) {
-  // your code here
-  return array.slice(startIncluded, endExcluded)
+	// your code here
+	return array.slice(startIncluded, endExcluded);
 }
-
-
 
 //STRING STUFF
 
-
-
 const str = 'POPzzzzEGG';
 let currSlice = str;
-
 
 const egg = str.slice(-3);
 currSlice = str.slice(-3);
@@ -66,8 +62,8 @@ console.log(str);
 console.log(currSlice);
 //'POP'
 
-const noPop  = str.slice(3);
-console.log(str.slice(3))
+const noPop = str.slice(3);
+console.log(str.slice(3));
 currSlice = str.slice(3);
 
 console.log(noPop);
