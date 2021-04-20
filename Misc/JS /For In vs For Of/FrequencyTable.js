@@ -19,3 +19,24 @@ function firstNonRepeatingCharacter(string) {
 	if (!nonRepeatingIdxs.length) return -1;
 	else return nonRepeatingIdxs.reduce((acc, val) => (acc < val ? acc : val));
 }
+
+function generateDocument(characters, document) {
+	const charactersFreq = genFrequencyTable(characters);
+	const docFreq = genFrequencyTable(document);
+
+	for (const key in docFreq) {
+		if (docFreq[key] > charactersFreq[key] || !charactersFreq[key])
+			return false;
+	}
+
+	return true;
+}
+
+const genFrequencyTable = (str) => {
+	const table = {};
+
+	for (const char of str) {
+		table[char] ? (table[char] += 1) : (table[char] = 1);
+	}
+	return table;
+};
