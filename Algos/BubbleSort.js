@@ -12,7 +12,7 @@ const bubbleSort = (array) => {
 			const next = arr[i + 1];
 
 			if (curr > next) {
-				runUpdate(i, i + 1, arr);
+				bubbleUp(i, i + 1, arr);
 				sorting = true;
 			}
 		}
@@ -23,7 +23,7 @@ const bubbleSort = (array) => {
 	return array;
 };
 
-const runUpdate = (currIdx, nextIdx, arr) => {
+const bubbleUp = (currIdx, nextIdx, arr) => {
 	// const curr = arr[currIdx];
 	// const next = arr[nextIdx];
 
