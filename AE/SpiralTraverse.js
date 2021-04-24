@@ -89,11 +89,4 @@ const spiralTraverse = (array) => {
 	return spiral;
 };
 
-const cleanArr = (array) => {
-	const res = [];
-
-	array.forEach((arr) => {
-		if (arr.length) res.push(arr);
-	});
-	return res;
-};
+const cleanArr = (array) => array.filter((arr) => arr.length);
