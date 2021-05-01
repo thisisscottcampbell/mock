@@ -72,3 +72,7 @@ console.log(str);
 //'POPzzzzEGG'
 console.log(currSlice);
 //'zzzzEGG'
+
+const noZzzz = str.slice(0, 3) + str.slice(-3);
+console.log(noZzzz);
+//'POPEGG'
