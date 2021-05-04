@@ -37,6 +37,15 @@ class BST {
 			return this.right.contains(value);
 		} else return true;
 	}
+
+	getRightMin() {
+		let temp = this.right;
+
+		while (temp.left) {
+			temp = temp.left;
+		}
+		return temp.value;
+	}
 }
 
 let tree = new BST(10);
