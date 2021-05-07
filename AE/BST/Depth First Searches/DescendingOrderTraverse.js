@@ -25,7 +25,7 @@ tree.insert(6);
 tree.insert(2);
 tree.insert(1);
 
-const postOrderTraverse = (tree, array = []) => {
+const descendingOrderTraverse = (tree, array = []) => {
 	console.log(array);
 
 	if (!tree) console.log('done here');
@@ -33,48 +33,51 @@ const postOrderTraverse = (tree, array = []) => {
 	if (tree) {
 		console.log('curr val', tree.value);
 
-		postOrderTraverse(tree.left, array);
-		postOrderTraverse(tree.right, array);
+		descendingOrderTraverse(tree.right, array);
 		array.push(tree.value);
+		descendingOrderTraverse(tree.left, array);
 	}
 
 	return array;
 };
 
-const postOrder = postOrderTraverse(tree);
-console.log('postOrder =', postOrder);
+const descendingOrder = descendingOrderTraverse(tree);
+console.log('descendingOrder =', descendingOrder);
 
 // []
 // curr val 10
 // []
-// curr val 5
-// []
-// curr val 2
-// []
-// curr val 1
-// []
-// done here
-// []
-// done here
-// [ 1 ]
-// done here
-// [ 1, 2 ]
-// curr val 6
-// [ 1, 2 ]
-// done here
-// [ 1, 2 ]
-// done here
-// [ 1, 2, 6, 5 ]
 // curr val 15
-// [ 1, 2, 6, 5 ]
-// done here
-// [ 1, 2, 6, 5 ]
+// []
 // curr val 22
-// [ 1, 2, 6, 5 ]
+// []
 // done here
-// [ 1, 2, 6, 5 ]
+// [ 22 ]
 // done here
-// postOrder = [
-//    1,  2,  6, 5,
-//   22, 15, 10
+// [ 22, 15 ]
+// done here
+// [ 22, 15, 10 ]
+// curr val 5
+// [ 22, 15, 10 ]
+// curr val 6
+// [ 22, 15, 10 ]
+// done here
+// [ 22, 15, 10, 6 ]
+// done here
+// [ 22, 15, 10, 6, 5 ]
+// curr val 2
+// [ 22, 15, 10, 6, 5 ]
+// done here
+// [ 22, 15, 10, 6, 5, 2 ]
+// curr val 1
+// [ 22, 15, 10, 6, 5, 2 ]
+// done here
+// [
+//   22, 15, 10, 6,
+//    5,  2,  1
+// ]
+// done here
+// descendingOrder = [
+//   22, 15, 10, 6,
+//    5,  2,  1
 // ]
