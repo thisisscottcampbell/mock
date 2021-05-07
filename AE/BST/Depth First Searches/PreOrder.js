@@ -26,7 +26,9 @@ tree.insert(2);
 tree.insert(1);
 
 const preOrderTraverse = (tree, array = []) => {
-	if (!tree) return;
+	console.log(array);
+
+	if (!tree) console.log('done here');
 
 	if (tree) {
 		console.log(tree.value);
@@ -39,5 +41,33 @@ const preOrderTraverse = (tree, array = []) => {
 	return array;
 };
 
-const pre = preOrderTraverse(tree);
-console.log(pre);
+const preOrder = preOrderTraverse(tree);
+console.log('preOrder =', preOrder);
+
+// []
+// curr val 10
+// [ 10 ]
+// curr val 5
+// [ 10, 5 ]
+// curr val 2
+// [ 10, 5, 2 ]
+// curr val 1
+// [ 10, 5, 2, 1 ]
+// done here
+// [ 10, 5, 2, 1 ]
+// done here
+// [ 10, 5, 2, 1 ]
+// curr val 6
+// [ 10, 5, 2, 1, 6 ]
+// done here
+// [ 10, 5, 2, 1, 6 ]
+// curr val 15
+// [ 10, 5, 2, 1, 6, 15 ]
+// curr val 22
+// [
+//   10,  5,  2, 1,
+//    6, 15, 22
+// ]
+// done here
+
+//preorder = pre [ 10,  5,  2, 1, 6, 15, 22 ]
