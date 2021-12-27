@@ -1,22 +1,19 @@
-** PART 1 **
+/* ** PART 1 ** */
 
 /*
 Declare a variable 'myNums' and set it to an object.
-On that object you will have two key-value pairs. One key will be 'favoriteNumber' and its value will be your favorite number.
-The other key will be 'randomNumber' and its value will be 12. */
+*/
 
-const myNums = {
-    favoriteNumber: 32,
-    randomNumber: 12
-}
+const myNums = {};
 
+/* add 5 key value pairs to myNums, each key assigned the value of a different two-digit number */
 
-/* Declare a variable 'randomNum' and set it to the value of the randomNumber key in th myNums object */
-/* Decalre a variable 'faveNum' and set it to the value of the favoriteNumber key in the myNums object */
-
-const random = myNums.randomNumber;
-const favorite = myNums.favoriteNumber;
-
+myNums.numA = 12;
+myNums.numB = 32;
+myNums.numA = 44;
+myNums.numA = 71;
+myNums.numA = 13
+;
 
 /*
 Write a function 'largestSwap' that takes a two-digit number and determines if it's the largest of two possible digit swaps.
@@ -35,12 +32,31 @@ const largestSwap = num => {
 
 /* Check that your 'largestSwap' function is working correctly by passing randomNum and favoriteNum to your 'largestSwap' function */
 
-console.log(largestSwap(random));
-//false
-console.log(largesstSwap(favorite));
+console.log(largestSwap(72));
 //true
+console.log(largestSwap(27));
+//false
 
-** CLOSURE **
+/* write a function 'swapped' that accepts an object and a function as an inputs. 
+Swapped should return an array of the values from the input object that return true when passed to the input function. 
+
+i.e., Pass your largestSwap function, and your myNums object to 'swapped', testing each value in myNums with largestSwap
+*/
+
+const swapped = (obj, func) => {
+  const res = [];
+
+  for (const key in obj) {
+    const curr = obj[key];
+    if (func(curr)) res.push(curr);
+  }
+
+  return res;
+}
+
+console.log(swapped(myNums, largestSwap));
+
+/* ** CLOSURE ** */
 
 // Write a function rollCall that accepts an array of names and returns a function. The first time the returned function is invoked, it should log the first name to the console. The second time it is invoked, it should log the second name to the console, and so on, until all names have been called. Once all names have been called, it should log 'Everyone accounted for'.
 
@@ -49,31 +65,31 @@ const rollCall = array => {
   let callTracker = 0;
  
    const coveHandler = () => {
-     const i = callTracker;
-     if (!array[i]) return console.log('Everyone accounted for')
+     const idx = callTracker;
+     if (!array[idx]) return console.log('Everyone accounted for')
      callTracker += 1
-     return console.log(array[i])
+     return console.log(array[idx])
      
    }
    return coveHandler
  } 
  
- // /*** Uncomment these to check your work! ***/
- const rollCaller = rollCall(['Victoria', 'Juan', 'Ruth'])
- const callOne = rollCaller()
- const callTwo = rollCaller()
- const callThree = rollCaller()
- const callFour = rollCaller()
- console.log(callOne) // => 'Victoria'
- console.log(callTwo) // => 'Juan'
- console.log(callThree) // => 'Ruth'
- console.log(callFour) // => 'Everyone accounted for'
+//  // /*** Uncomment these to check your work! ***/
+//  const rollCaller = rollCall(['Victoria', 'Juan', 'Ruth'])
+//  const callOne = rollCaller()
+//  const callTwo = rollCaller()
+//  const callThree = rollCaller()
+//  const callFour = rollCaller()
+//  console.log(callOne) // => 'Victoria'
+//  console.log(callTwo) // => 'Juan'
+//  console.log(callThree) // => 'Ruth'
+//  console.log(callFour) // => 'Everyone accounted for'
 
-** RECURSION **
+/* ** RECURSION ** */
 
 /* Declare a variable with the label 'nums' and assign it the value of whole intergers, 1 - 6.
 Using recursion, write a function 'leaveOddsDoubleEvens' that takes an array of intergers as an input. This function will return an array of intergers that cotains all the odd values from the input array and the values of the even intergers doubbled */
-
+const nums= [1, 2, 3, 4, 5, 6]
 const leaveOddsDoubleEvens = array => {
     const res = [];
   
@@ -86,12 +102,12 @@ const leaveOddsDoubleEvens = array => {
       else res.push(curr);
   
       arr.splice(0, 1);
-      console.log(arr)
+      
       return process(arr)
     }
     process(array);
     return res;
   }
   
-  console.log(leaveOddsDoubleEvens([1, 2, 3, 4, 5, 6]))
+  console.log(leaveOddsDoubleEvens(nums))
   //[1, 4, 3, 8, 5, 12]
