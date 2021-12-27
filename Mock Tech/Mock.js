@@ -8,11 +8,11 @@ const myNums = {};
 
 /* add 5 key value pairs to myNums, each key assigned the value of a different two-digit number */
 
-myNums.numA = 12;
-myNums.numB = 32;
-myNums.numA = 44;
-myNums.numA = 71;
-myNums.numA = 13
+myNums.a = 12;
+myNums.b = 32;
+myNums.c = 44;
+myNums.d = 71;
+myNums.e = 13
 ;
 
 /*
@@ -89,7 +89,7 @@ const rollCall = array => {
 
 /* Declare a variable with the label 'nums' and assign it the value of whole intergers, 1 - 6.
 Using recursion, write a function 'leaveOddsDoubleEvens' that takes an array of intergers as an input. This function will return an array of intergers that cotains all the odd values from the input array and the values of the even intergers doubbled */
-const nums= [1, 2, 3, 4, 5, 6]
+const nums  = [1, 2, 3, 4, 5, 6]
 const leaveOddsDoubleEvens = array => {
     const res = [];
   
